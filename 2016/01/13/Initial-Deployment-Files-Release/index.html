@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="/home/steve">
+    <title>Initial Deployment Files Release - /home/steve</title>
+    <meta name="author" content="Steve McGrath">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption.  These fabric scripts cover a variety of tasks from de">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Initial Deployment Files Release">
+<meta property="og:url" content="http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/index.html">
+<meta property="og:site_name" content="/home/steve">
+<meta property="og:description" content="I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption.  These fabric scripts cover a variety of tasks from de">
+<meta property="og:updated_time" content="2016-08-29T20:13:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Initial Deployment Files Release">
+<meta name="twitter:description" content="I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption.  These fabric scripts cover a variety of tasks from de">
+<meta name="twitter:creator" content="@stevemcgrath">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-yrst5vo1nxaxbp2g3v9na2wg1lixlpr3ghbjdvskeixmu79deycecx3rh4bt.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">/home/steve</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Steve McGrath</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>echo stuff &gt; /dev/random</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.reddit.com/user/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-reddit"></i>
+                        <span class="sidebar-button-desc">Reddit</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/chigeek" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Initial Deployment Files Release
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-01-13T10:02:00-06:00">
+	
+		    Jan 13, 2016
+    	
+    </time>
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption.  These fabric scripts cover a variety of tasks from deployment and maintenance of various products to deploying some of my code.  I will be updating the repository as needs arise, and as always am welcome to any input.</p>
+<p>Using my fabric files is actually pretty simple, however you need to <a href="http://www.fabfile.org/installing.html" target="_blank" rel="external">have fabric installed on your workstation</a> before anything will work.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/SteveMcGrath/deploy.git</div><div class="line">cd deploy</div></pre></td></tr></table></figure>
+<p>Now as long as your in the deploy directory, the fab command should work for deployment and management.  To get a list of the available commands, run <code>fab -l</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(fabric)tnsmbp:deployment smcgrath$ fab -l</div><div class="line">Available commands:</div><div class="line"></div><div class="line">    nessus.install      Installs/Updates Nessus.</div><div class="line">    nessus.plugin_push  Pushes plugin tarball to the remote scanner.</div><div class="line">    nessus.prep         Prepares a vanilla system for use as a Nessus scanner.</div><div class="line">    prep.prep           Generic preparation script for CentOS/RHEL boxen.</div><div class="line">    prep.rmate          Installs the rmate shell script into /usr/local/bin</div><div class="line">    prep.sshkeys        Pushes the management keys to remote server.</div><div class="line">    prep.template       Performs the needed actions to make the host templatable.</div><div class="line">    prep.update         Updates the OS to current</div><div class="line">    pvs.install         Installs/Updates PVS.</div><div class="line">    pvs.prep            Prepares a vanilla system for use as a PVS sensor.</div><div class="line">    sc.getfeed          Pulls the plugin feeds from SecurityCenter to the local box.</div><div class="line">(fabric)tnsmbp:deployment smcgrath$</div><div class="line">`</div></pre></td></tr></table></figure>
+<p>Before we run anything, you will need to copy the <code>fabfile/config.py-dist</code> file to <code>fabfile/config.py</code> and make the appropriate changes in this file.  Once thats done, it should be a simple matter of running the appropriate command against a host.  Note all of the output is whats being returned back from the remote system as the commands are being run, and while generally can be ignored if everything went as expected, this output can be useful when things go awry.    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">(fabric)tnsmbp:deployment smcgrath$ fab -H scanner1.home.cugnet.net nessus.install</div><div class="line">[scanner1.home.cugnet.net] Executing task &apos;nessus.install&apos;</div><div class="line">[scanner1.home.cugnet.net] run: rpm -qa Nessus</div><div class="line">[scanner1.home.cugnet.net] out: Nessus-6.5.2-es6.x86_64</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">Nessus-6.5.4-es6.x86_64.rpm</div><div class="line">[scanner1.home.cugnet.net] put: /Users/smcgrath/Dropbox/Repositories/Projects/deployment/fabfile/../packages/Nessus-6.5.4-es6.x86_64.rpm -&gt; /tmp/Nessus.rpm</div><div class="line">[scanner1.home.cugnet.net] run: yum -y -q install /tmp/Nessus.rpm</div><div class="line">[scanner1.home.cugnet.net] out: Shutting down Nessus services: [  OK  ]</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out: Unpacking Nessus Core Components...</div><div class="line">[scanner1.home.cugnet.net] out: nessusd (Nessus) 6.5.4 [build M20044] for Linux</div><div class="line">[scanner1.home.cugnet.net] out: Copyright (C) 1998 - 2015 Tenable Network Security, Inc</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out: Processing the Nessus plugins...</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out: [##                                                ]</div><div class="line">[scanner1.home.cugnet.net] out: [###                                               ]</div><div class="line">[scanner1.home.cugnet.net] out: [####                                              ]</div><div class="line">[scanner1.home.cugnet.net] out: [#####                                             ]</div><div class="line">[scanner1.home.cugnet.net] out: [######                                            ]</div><div class="line">[scanner1.home.cugnet.net] out: [#######                                           ]</div><div class="line">[scanner1.home.cugnet.net] out: [########                                          ]</div><div class="line">[scanner1.home.cugnet.net] out: [#########                                         ]</div><div class="line">[scanner1.home.cugnet.net] out: [##########                                        ]</div><div class="line">[scanner1.home.cugnet.net] out: [###########                                       ]</div><div class="line">[scanner1.home.cugnet.net] out: [############                                      ]</div><div class="line">[scanner1.home.cugnet.net] out: [#############                                     ]</div><div class="line">[scanner1.home.cugnet.net] out: [##############                                    ]</div><div class="line">[scanner1.home.cugnet.net] out: [###############                                   ]</div><div class="line">[scanner1.home.cugnet.net] out: [################                                  ]</div><div class="line">[scanner1.home.cugnet.net] out: [#################                                 ]</div><div class="line">[scanner1.home.cugnet.net] out: [##################                                ]</div><div class="line">[scanner1.home.cugnet.net] out: [###################                               ]</div><div class="line">[scanner1.home.cugnet.net] out: [####################                              ]</div><div class="line">[scanner1.home.cugnet.net] out: [#####################                             ]</div><div class="line">[scanner1.home.cugnet.net] out: [######################                            ]</div><div class="line">[scanner1.home.cugnet.net] out: [#######################                           ]</div><div class="line">[scanner1.home.cugnet.net] out: [########################                          ]</div><div class="line">[scanner1.home.cugnet.net] out: [#########################                         ]</div><div class="line">[scanner1.home.cugnet.net] out: [##########################                        ]</div><div class="line">[scanner1.home.cugnet.net] out: [###########################                       ]</div><div class="line">[scanner1.home.cugnet.net] out: [############################                      ]</div><div class="line">[scanner1.home.cugnet.net] out: [#############################                     ]</div><div class="line">[scanner1.home.cugnet.net] out: [##############################                    ]</div><div class="line">[scanner1.home.cugnet.net] out: [###############################                   ]</div><div class="line">[scanner1.home.cugnet.net] out: [################################                  ]</div><div class="line">[scanner1.home.cugnet.net] out: [#################################                 ]</div><div class="line">[scanner1.home.cugnet.net] out: [##################################                ]</div><div class="line">[scanner1.home.cugnet.net] out: [###################################               ]</div><div class="line">[scanner1.home.cugnet.net] out: [####################################              ]</div><div class="line">[scanner1.home.cugnet.net] out: [#####################################             ]</div><div class="line">[scanner1.home.cugnet.net] out: [######################################            ]</div><div class="line">[scanner1.home.cugnet.net] out: [#######################################           ]</div><div class="line">[scanner1.home.cugnet.net] out: [########################################          ]</div><div class="line">[scanner1.home.cugnet.net] out: [#########################################         ]</div><div class="line">[scanner1.home.cugnet.net] out: [##########################################        ]</div><div class="line">[scanner1.home.cugnet.net] out: [###########################################       ]</div><div class="line">[scanner1.home.cugnet.net] out: [############################################      ]</div><div class="line">[scanner1.home.cugnet.net] out: [#############################################     ]</div><div class="line">[scanner1.home.cugnet.net] out: [##############################################    ]</div><div class="line">[scanner1.home.cugnet.net] out: [###############################################   ]</div><div class="line">[scanner1.home.cugnet.net] out: [################################################  ]</div><div class="line">[scanner1.home.cugnet.net] out: [################################################  ]</div><div class="line">[scanner1.home.cugnet.net] out: [################################################  ]</div><div class="line">[scanner1.home.cugnet.net] out: [##################################################]</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out: All plugins loaded (472sec)</div><div class="line">[scanner1.home.cugnet.net] out:  - You can start Nessus by typing /sbin/service nessusd start</div><div class="line">[scanner1.home.cugnet.net] out:  - Then go to https://scanner1.home.cugnet.net:8834/ to configure your scanner</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line"></div><div class="line">[scanner1.home.cugnet.net] run: service nessusd stop</div><div class="line">[scanner1.home.cugnet.net] out: Shutting down Nessus servic[FAILED]</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line"></div><div class="line">[scanner1.home.cugnet.net] run: rm -f /tmp/Nessus.rpm</div><div class="line">[scanner1.home.cugnet.net] put: /Users/smcgrath/Dropbox/Repositories/Projects/deployment/fabfile/../tmp/all-2.0.tar.gz -&gt; /tmp/plugins.tar.gz</div><div class="line">[scanner1.home.cugnet.net] run: /opt/nessus/sbin/nessuscli update /tmp/plugins.tar.gz</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out:  * Update successful.  The changes will be automatically processed by Nessus.</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line"></div><div class="line">[scanner1.home.cugnet.net] run: rm -f /tmp/plugins.tar.gz</div><div class="line">[scanner1.home.cugnet.net] run: service nessusd start</div><div class="line">[scanner1.home.cugnet.net] out: Starting Nessus services:  [  OK  ]</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line">[scanner1.home.cugnet.net] out:</div><div class="line"></div><div class="line"></div><div class="line">Done.</div><div class="line">Disconnecting from scanner1.home.cugnet.net... done.</div><div class="line">(fabric)tnsmbp:deployment smcgrath$</div></pre></td></tr></table></figure>
+<p>You can even assign <em>roles</em>, or classes of systems if you want to work on multiple machines at once.  In general, there is a lot of power with fabric to build and maintain systems centrally without any agent installed on them (unlike Chef or Puppet) and has been my primary way to manage the hosts that I have.  I know the trade-offs between agent-based solutions and agent-less ones like fabric and ansible, and I just seem to prefer agent-less.</p>
+<p>If you would like to see more of what fabric can do, I’d highly recommend heading to the <a href="http://fabfile.org" target="_blank" rel="external">Fabfile.org</a> website. </p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/deployment/">deployment</a> <a class="tag tag--primary tag--small t-link" href="/tags/fabric/">fabric</a> <a class="tag tag--primary tag--small t-link" href="/tags/python/">python</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/14/Dofler-at-CircleCityCon3/"  data-tooltip="Dofler at CircleCityCon3">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/15/CUGNet-VPS-Services-Closing/" data-tooltip="CUGNet VPS Services Closing">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Steve McGrath. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/14/Dofler-at-CircleCityCon3/"  data-tooltip="Dofler at CircleCityCon3">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/15/CUGNet-VPS-Services-Closing/" data-tooltip="CUGNet VPS Services Closing">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Steve McGrath</h4>
+        
+            <div id="about-card-bio"><p>echo stuff &gt; /dev/random</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Sales Engineer</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Chicago, IL
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    autofocus="autofocus"/>
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2015/07/15/pySecurityCenter-2-1-Release/">
+                            <h3 class="media-heading">pySecurityCenter 2.1 Release</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 15, 2015
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2015/07/15/CUGNet-VPS-Services-Closing/">
+                            <h3 class="media-heading">CUGNet VPS Services Closing</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 15, 2015
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                            <h3 class="media-heading">Initial Deployment Files Release</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jan 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/06/14/Dofler-at-CircleCityCon3/">
+                            <h3 class="media-heading">Dofler at CircleCityCon3</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                            <h3 class="media-heading">Setting up PocketCHIP</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 16, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                5 posts found
+            </p>
+        </div>
+    </div>
+</div>
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

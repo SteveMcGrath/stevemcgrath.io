@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="/home/steve">
+    <title>Setting up PocketCHIP - /home/steve</title>
+    <meta name="author" content="Steve McGrath">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Setting up PocketCHIP">
+<meta property="og:url" content="http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/index.html">
+<meta property="og:site_name" content="/home/steve">
+<meta property="og:description" content="So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH">
+<meta property="og:updated_time" content="2016-08-29T20:25:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setting up PocketCHIP">
+<meta name="twitter:description" content="So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH">
+<meta name="twitter:creator" content="@stevemcgrath">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-yrst5vo1nxaxbp2g3v9na2wg1lixlpr3ghbjdvskeixmu79deycecx3rh4bt.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">/home/steve</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=90" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=110" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Steve McGrath</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>echo stuff &gt; /dev/random</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.reddit.com/user/stevemcgrath" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-reddit"></i>
+                        <span class="sidebar-button-desc">Reddit</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.linkedin.com/in/chigeek" target="_blank">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                        <span class="sidebar-button-desc">LinkedIn</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Setting up PocketCHIP
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-07-16T17:58:00-05:00">
+	
+		    Jul 16, 2016
+    	
+    </time>
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH installed, and a few aliases to make things easy to work with.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> All of the operations below assume a basic understanding of terminal commands!</p>
+</blockquote>
+<h3 id="Updating-the-PocketCHIP-and-installing-the-software"><a href="#Updating-the-PocketCHIP-and-installing-the-software" class="headerlink" title="Updating the PocketCHIP and installing the software"></a>Updating the PocketCHIP and installing the software</h3><p>To start off, the PocketCHIP OS is slightly out of date as it’s currently being flashed, so the first thing we need to do is update the OS to current:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<p>Now lets go ahead and install the needed packages (Note: “\” and lines are used here for page cleanliness).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install openssh-client \</div><div class="line">                     openssh-server \</div><div class="line">                     irssi \</div><div class="line">                     dnsutils \</div><div class="line">                     moc \</div><div class="line">                     dwb</div></pre></td></tr></table></figure>
+<p>Next we will disable SSH from starting automatically:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo systemctl disable ssh</div></pre></td></tr></table></figure>
+<p>So now technically all of the software was installed (that was easy), but now we want to make the needed configuration changes to make everything behave how we expect it to.  I’d recommend actually doing everything from hear-on out through SSH, as you’ll have the benefit of a full-size keyboard.</p>
+<h3 id="Setting-up-the-Shell-Environment"><a href="#Setting-up-the-Shell-Environment" class="headerlink" title="Setting up the Shell Environment"></a>Setting up the Shell Environment</h3><p>with the small keyboard, it makes a lot of sense to build-in some aliases to commonly-used commands.  This will save a lot of keystrokes overall and can only improve the overall experience.  I prefer to shim into the user profile in a manner that means that I’m not constantly editing the default user profiles, as there is plenty in there that you simply don’t want to touch.  To do this, we will do the following:</p>
+<p><strong>Step 1:</strong> create the profile scripts directory.  This directory will house our custom additions to the shell environment and allows us to more easily extend the shell in a safer manner.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/.profile_scripts</div></pre></td></tr></table></figure></p>
+<p><strong>Step 2:</strong> using either <code>vi</code> or <code>nano</code>, we will need to append the following to the end of the <code>~/.bashrc</code> file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># This is a shim to allow for multiple profile script to exist in the</div><div class="line"># user home.  All of the shell scripts in ~/.profile_scripts will be</div><div class="line"># loaded into the user environment.                                    for SCRIPT_NAME in $(ls $HOME/.profile_scripts/*.sh);do</div><div class="line">    source $SCRIPT_NAME                                                done                                                                     unset SCRIPT_NAME</div></pre></td></tr></table></figure>
+<p><strong>Step 3:</strong> Now that the user’s profile is set to load anything with a .sh extension into the profile, lets create an aliases file and input the aliases that we want to use.  Using either <code>vi</code> or <code>nano</code>, create a new file at <code>~/.profile_scripts/aliases.sh</code> and input the following into the file (and feel free to modify as you see fit):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># Enable the SSH Daemon</div><div class="line">alias sshon=&quot;sudo systemctl start ssh&quot;</div><div class="line"></div><div class="line"># Disable the SSH Daemon</div><div class="line">alias sshoff=&quot;sudo systemctl stop ssh&quot;</div><div class="line"></div><div class="line"># Get all associated IP Addresses</div><div class="line">alias getip=\&quot;ip addr | awk &apos;/inet/ &#123;print $2&#125;&apos;\&quot;&quot;</div><div class="line"></div><div class="line"># List all files in long format</div><div class="line">alias ll=&quot;ls -al&quot;</div><div class="line"></div><div class="line"># A shortcut to grep the running processes</div><div class="line">alias pgr=&quot;ps -ef | grep&quot;</div><div class="line"></div><div class="line"># Install a package</div><div class="line">alias sagi=&quot;sudo apt-get install&quot;</div><div class="line"></div><div class="line"># Update the repository cache</div><div class="line">alias sagu=&quot;sudo apt-get update&quot;</div><div class="line"></div><div class="line"># Upgrade the current packages installed</div><div class="line">alias sagU=&quot;sudo apt-get upgrade&quot;</div><div class="line"></div><div class="line"># Search for a package</div><div class="line">alias sags=&quot;apt-cache search&quot;</div></pre></td></tr></table></figure>
+<p><strong>Step 4</strong>: Now to get these changes to apply to the current shell, you simply need to <code>source ~/.bashrc</code> and it will reload the shell environment based on these new settings.</p>
+<h3 id="Adding-the-Browser-to-to-the-Home-screen"><a href="#Adding-the-Browser-to-to-the-Home-screen" class="headerlink" title="Adding the Browser to to the Home screen"></a>Adding the Browser to to the Home screen</h3><p>Next we will want to add the browser to the home screen so that it is easily accessible for general use.  As the PocketCHIP home screen only supports 6 icons, we will need to replace the help documentation with the browser.  To do so we will need to modify the definitions file for pocket-home to point to the browser.  Using <code>vi</code> or <code>nano</code>, open <code>/usr/share/pocket-home/config.json</code> and look for the help icon and change this definition to look like below instead:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> &#123;</div><div class="line">  &quot;name&quot;: &quot;Web Browser&quot;,</div><div class="line">  &quot;icon&quot;: &quot;appIcons/webbrowser.png&quot;,</div><div class="line">  &quot;shell&quot;: &quot;BROWSER_EXEC&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>Once you have saved the change, we will need to bounce the pocket-home GUI by typing <code>sudo skill pocket-home</code>.  If you have made an error in the configuration, you will not see the GUI come back up and just see the PocketCHIP logo on the screen (it may take a minute or so for the GUI to show up).  If this is the case, don’t fret, just re-edit the file and and bounce the application again.  This is why we are making these changes over SSH, eight ;).</p>
+<h3 id="Configuring-the-Browser"><a href="#Configuring-the-Browser" class="headerlink" title="Configuring the Browser"></a>Configuring the Browser</h3><p>DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimick a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the <code>dwb</code> command) so that it will write it’s initial configuration file and then <code>CNTRL+X</code> to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">default-height=272</div><div class="line">default-width=420</div><div class="line">user-agent=Mozilla/5.0 (Linux; U; Android 4.0.3; en-us) AppleWebKit/999+ (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30</div></pre></td></tr></table></figure>
+<p>As DWB is keyboard-heavy for navigation, you may want to look at the <a href="http://portix.bitbucket.org/dwb/resources/manpage.html57" target="_blank" rel="external">DWB Manual</a> in order to get a good understanding of what to do.  I personally fine the simple cheat-sheet below enough to get by for most uses:</p>
+<ul>
+<li>CNTRL+Q - Quit</li>
+<li>o - Enter URL (Open)</li>
+<li>h - Go back</li>
+<li>l - Go forward</li>
+<li>Scrolling = Arrow keys</li>
+</ul>
+<h3 id="Finishing-up…"><a href="#Finishing-up…" class="headerlink" title="Finishing up…"></a>Finishing up…</h3><p>Now with these changes in place, go ahead and attempt to launch the browser from the home screen.  If all is well, the browser should come up and everything should look good.  A good test is to goto slashdot.org or google.com and see if the page is rendering as we should expect (no scrolling, mobile site, etc).  If everything looks good, then your done!</p>
+<h3 id="Errata"><a href="#Errata" class="headerlink" title="Errata"></a>Errata</h3><p>I have also built a script to automate all of the actions mentioned in the above post, please see the <a href="https://bbs.nextthing.co/t/pocketchip-browser-installer-script/4832" target="_blank" rel="external">PocketCHIP Browser Installer Script</a> post for information on how to use it.</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/chip/">chip</a> <a class="tag tag--primary tag--small t-link" href="/tags/howto/">howto</a> <a class="tag tag--primary tag--small t-link" href="/tags/linux/">linux</a> <a class="tag tag--primary tag--small t-link" href="/tags/pocketchip/">pocketchip</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/14/Dofler-at-CircleCityCon3/" data-tooltip="Dofler at CircleCityCon3">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2016 Steve McGrath. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/14/Dofler-at-CircleCityCon3/" data-tooltip="Dofler at CircleCityCon3">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+            
+        </div>
+        
+
+
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/d41458859a34ffb1dc81cca0636bd880?s=110" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Steve McGrath</h4>
+        
+            <div id="about-card-bio"><p>echo stuff &gt; /dev/random</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Sales Engineer</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Chicago, IL
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    autofocus="autofocus"/>
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">no post found</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2015/07/15/pySecurityCenter-2-1-Release/">
+                            <h3 class="media-heading">pySecurityCenter 2.1 Release</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 15, 2015
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2015/07/15/CUGNet-VPS-Services-Closing/">
+                            <h3 class="media-heading">CUGNet VPS Services Closing</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 15, 2015
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/01/13/Initial-Deployment-Files-Release/">
+                            <h3 class="media-heading">Initial Deployment Files Release</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jan 13, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/06/14/Dofler-at-CircleCityCon3/">
+                            <h3 class="media-heading">Dofler at CircleCityCon3</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jun 14, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/07/16/Setting-up-PocketCHIP/">
+                            <h3 class="media-heading">Setting up PocketCHIP</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Jul 16, 2016
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="no post found"
+                data-message-one="1 post found"
+                data-message-other="{n} posts found">
+                5 posts found
+            </p>
+        </div>
+    </div>
+</div>
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
