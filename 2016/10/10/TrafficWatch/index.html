@@ -6,19 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="/home/steve">
-    <title>Tag: dofler - /home/steve</title>
+    <title>TrafficWatch - /home/steve</title>
     <meta name="author" content="Steve McGrath">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="/home/steve">
-<meta property="og:url" content="http://stevemcgrath.io/tags/dofler/index.html">
+    <meta name="description" content="TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon’s traffic time-lapse-helper project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="TrafficWatch">
+<meta property="og:url" content="http://stevemcgrath.io/2016/10/10/TrafficWatch/index.html">
 <meta property="og:site_name" content="/home/steve">
+<meta property="og:description" content="TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon’s traffic time-lapse-helper project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an">
+<meta property="og:image" content="http://stevemcgrath.io/images/chicago-traffic-example.gif">
+<meta property="og:updated_time" content="2016-10-11T01:56:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="/home/steve">
+<meta name="twitter:title" content="TrafficWatch">
+<meta name="twitter:description" content="TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon’s traffic time-lapse-helper project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an">
+<meta name="twitter:image" content="http://stevemcgrath.io/images/chicago-traffic-example.gif">
 <meta name="twitter:creator" content="@stevemcgrath">
     
     
@@ -46,7 +52,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">/home/steve</a>
@@ -68,7 +74,7 @@
 
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -219,69 +225,123 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/06/14/Dofler-at-CircleCityCon3/">
-                            Dofler at CircleCityCon3
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-06-14T10:02:00-05:00">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            TrafficWatch
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-10-10T19:26:00-05:00">
 	
-		    Jun 14, 2016
+		    Oct 10, 2016
     	
     </time>
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Aside from a few hiccups that delayed getting Dofler installed and fully functional until mid-day Saturday, Dofler was a fantastical success at <a href="http://circlecitycon.com" target="_blank" rel="external">CircleCityCon</a>!  We discovered that the new codebase Dofler sits on was catching more entertainment than ever, including some MJPEG-based webcams:</p>
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">GREAT JOB to whomever is checking their MJPEG home security system via HTTP on the con network. <a href="https://twitter.com/hashtag/dofler?src=hash" target="_blank" rel="external">#dofler</a> <a href="https://t.co/MiD6jSR8lz" target="_blank" rel="external">pic.twitter.com/MiD6jSR8lz</a></p>&mdash; Circle City Con (<a href="https://twitter.com/CircleCityCon" target="_blank" rel="noopener noreferrer">@CircleCityCon</a>) <a href="https://twitter.com/CircleCityCon/status/741754925256937472" target="_blank" rel="external">June 11, 2016</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon’s <a href="https://github.com/ianharmon/traffic-time-lapse-helper" target="_blank" rel="external">traffic time-lapse-helper</a> project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour.  There are some arguments that you can specity as well if you want look at somethign other than Chicago traffic:</p>
+<ul>
+<li><strong>–name / -n</strong> Name for the GIF in the upper-left corner</li>
+<li><strong>–url / -u</strong> URL String for that we will be time-lapsing</li>
+<li><strong>–interval / -i</strong> The time interval (in minutes)</li>
+<li><strong>–duration / -d</strong> The number of minutes to run</li>
+<li><strong>–gifout / -g</strong> The output filename for the GIF</li>
+<li><strong>–xoffset</strong> X Offset for the crop (0 means centered)</li>
+<li><strong>–yoffset</strong> Y Offset for the crop (0 means centered)</li>
+<li><strong>–font</strong> Font for the name and time display in the upper-left corner (default is Arial)</li>
+<li><strong>–fontsize</strong> Size of the text (default is 32)</li>
+<li><strong>–fontcolor</strong> Color of the text (default is <a href="https://twitter.com/hashtag/000000b0" target="_blank" rel="noopener noreferrer">#000000b0</a>)</li>
+<li><strong>–directory</strong> Path for the individual screencaps (default is screenshots)</li>
+<li><strong>–gifdelay</strong> The ms delay timer for the GIF animation (default 500)</li>
+</ul>
+<p>An example output would look something like this:</p>
+<p><img src="/images/chicago-traffic-example.gif" alt="example-gif"></p>
 
-<p>In the evening, Dofler made it’s way to the party and fun was had at a much larger scale ;).</p>
-<p>Thanks to everyone who connected up and was purposefully trolling the board for everyone else’s amusement!  See ya’ll at BSidesLV!</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/06/14/Dofler-at-CircleCityCon3/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/google-maps/">google maps</a> <a class="tag tag--primary tag--small t-link" href="/tags/nodejs/">nodejs</a>
+
+            </div>
         
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/16/Setting-up-PocketCHIP/" data-tooltip="Setting up PocketCHIP">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
-        <li class="pagination-number">page 1 of 1</li>
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -291,6 +351,84 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/07/16/Setting-up-PocketCHIP/" data-tooltip="Setting up PocketCHIP">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
             
         </div>
         
@@ -492,6 +630,8 @@
         <!--SCRIPTS-->
 <script src="/assets/js/script-rt08quwts7iav5x0cfd2ym0gb5qkd1lvrsmwrakxtkhefmaaes4ywkmnjnwf.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
 

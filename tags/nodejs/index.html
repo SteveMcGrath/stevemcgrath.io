@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="/home/steve">
-    <title>Tag: dofler - /home/steve</title>
+    <title>Tag: nodejs - /home/steve</title>
     <meta name="author" content="Steve McGrath">
     
     
@@ -15,7 +15,7 @@
     
     <meta property="og:type" content="blog">
 <meta property="og:title" content="/home/steve">
-<meta property="og:url" content="http://stevemcgrath.io/tags/dofler/index.html">
+<meta property="og:url" content="http://stevemcgrath.io/tags/nodejs/index.html">
 <meta property="og:site_name" content="/home/steve">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="/home/steve">
@@ -233,15 +233,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2016/06/14/Dofler-at-CircleCityCon3/">
-                            Dofler at CircleCityCon3
+                        <a class="link-unstyled" href="/2016/10/10/TrafficWatch/">
+                            TrafficWatch
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-06-14T10:02:00-05:00">
+    <time itemprop="datePublished" datetime="2016-10-10T19:26:00-05:00">
 	
-		    Jun 14, 2016
+		    Oct 10, 2016
     	
     </time>
     
@@ -250,19 +250,30 @@
             </div>
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>Aside from a few hiccups that delayed getting Dofler installed and fully functional until mid-day Saturday, Dofler was a fantastical success at <a href="http://circlecitycon.com" target="_blank" rel="external">CircleCityCon</a>!  We discovered that the new codebase Dofler sits on was catching more entertainment than ever, including some MJPEG-based webcams:</p>
-<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">GREAT JOB to whomever is checking their MJPEG home security system via HTTP on the con network. <a href="https://twitter.com/hashtag/dofler?src=hash" target="_blank" rel="external">#dofler</a> <a href="https://t.co/MiD6jSR8lz" target="_blank" rel="external">pic.twitter.com/MiD6jSR8lz</a></p>&mdash; Circle City Con (<a href="https://twitter.com/CircleCityCon" target="_blank" rel="noopener noreferrer">@CircleCityCon</a>) <a href="https://twitter.com/CircleCityCon/status/741754925256937472" target="_blank" rel="external">June 11, 2016</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>In the evening, Dofler made it’s way to the party and fun was had at a much larger scale ;).</p>
-<p>Thanks to everyone who connected up and was purposefully trolling the board for everyone else’s amusement!  See ya’ll at BSidesLV!</p>
+                    <p>TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon’s <a href="https://github.com/ianharmon/traffic-time-lapse-helper" target="_blank" rel="external">traffic time-lapse-helper</a> project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour.  There are some arguments that you can specity as well if you want look at somethign other than Chicago traffic:</p>
+<ul>
+<li><strong>–name / -n</strong> Name for the GIF in the upper-left corner</li>
+<li><strong>–url / -u</strong> URL String for that we will be time-lapsing</li>
+<li><strong>–interval / -i</strong> The time interval (in minutes)</li>
+<li><strong>–duration / -d</strong> The number of minutes to run</li>
+<li><strong>–gifout / -g</strong> The output filename for the GIF</li>
+<li><strong>–xoffset</strong> X Offset for the crop (0 means centered)</li>
+<li><strong>–yoffset</strong> Y Offset for the crop (0 means centered)</li>
+<li><strong>–font</strong> Font for the name and time display in the upper-left corner (default is Arial)</li>
+<li><strong>–fontsize</strong> Size of the text (default is 32)</li>
+<li><strong>–fontcolor</strong> Color of the text (default is <a href="https://twitter.com/hashtag/000000b0" target="_blank" rel="noopener noreferrer">#000000b0</a>)</li>
+<li><strong>–directory</strong> Path for the individual screencaps (default is screenshots)</li>
+<li><strong>–gifdelay</strong> The ms delay timer for the GIF animation (default 500)</li>
+</ul>
+<p>An example output would look something like this:</p>
+<p><img src="/images/chicago-traffic-example.gif" alt="example-gif"></p>
 
                     
                         
                     
                     
                         <p>
-                            <a href="/2016/06/14/Dofler-at-CircleCityCon3/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/2016/10/10/TrafficWatch/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

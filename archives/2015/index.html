@@ -269,7 +269,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -291,22 +291,16 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>I’m proud to announce the general availability for pySecurityCenter version 2.1.x accessible from PyPI immediately.  pySC 2.1 supports connectivity to SecurityCenter 5, which leverages a completely new RESTful API.  Because of this, the pySC SecurityCenter 5 support will be an evolving process.  Whats implemented today will not be changing, however many of the convenience functions that pySecurityCenter has for SecurityCenter 4.x have not been coded into the SC5 module, as enumeration for the API is still active.  Further I don’t want to paint myself into a corner with SC5 support, as I expect the API to evolve a bit over time, and don’t want pySC to need a lot of work to support multiple revisions of the SC5 API.</p>
 <p>We shall see what happens over the long haul, however there is already a couple of examples on how to leverage the 5.x module in the examples section within the GutHub repository.</p>
 <h3 id="To-upgrade"><a href="#To-upgrade" class="headerlink" title="To upgrade:"></a>To upgrade:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -U pysecuritycenter</div></pre></td></tr></table></figure>
 <p>or download the tagged version and install manually.</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h3><p>Using pySecurityCenter with SecurityCenter 5 isn’t all that different than using the SC4 classes.  Login is done independently now for a number of reasons, however.  To instantiate and login, you would do the following:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> securitycenter <span class="keyword">import</span> SecurityCenter5</div><div class="line">sc = SecurityCenter5(<span class="string">'HOSTNAME_GOES_HERE'</span>)</div><div class="line">sc.login(<span class="string">'USERNAME'</span>, <span class="string">'PASSWORD'</span>)</div></pre></td></tr></table></figure>
                     
+                        <a href="/2015/07/15/pySecurityCenter-2-1-Release/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/2015/07/15/pySecurityCenter-2-1-Release/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -403,7 +397,10 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>I’m proud to announce the general availability for pySecurityCenter version 2.1.x accessible from PyPI immediately.  pySC 2.1 supports connectivity to SecurityCenter 5, which leverages a completely new RESTful API.  Because of this, the pySC SecurityCenter 5 support will be an evolving process.  Whats implemented today will not be changing, however many of the convenience functions that pySecurityCenter has for SecurityCenter 4.x have not been coded into the SC5 module, as enumeration for the API is still active.  Further I don’t want to paint myself into a corner with SC5 support, as I expect the API to evolve a bit over time, and don’t want pySC to need a lot of work to support multiple revisions of the SC5 API.</p>
+<p>We shall see what happens over the long haul, however there is already a couple of examples on how to leverage the 5.x module in the examples section within the GutHub repository.</p>
+<h3 id="To-upgrade"><a href="#To-upgrade" class="headerlink" title="To upgrade:"></a>To upgrade:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -U pysecuritycenter</div></pre></td></tr></table></figure>
+<p>or download the tagged version and install manually.</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -441,7 +438,11 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><p>I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption.  These fabric scripts cover a variety of tasks from deployment and maintenance of various products to deploying some of my code.  I will be updating the repository as needs arise, and as always am welcome to any input.</p>
+<p>Using my fabric files is actually pretty simple, however you need to <a href="http://www.fabfile.org/installing.html" target="_blank" rel="external">have fabric installed on your workstation</a> before anything will work.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone <a href="https://github.com/SteveMcGrath/deploy.git" target="_blank" rel="noopener noreferrer">https://github.com/SteveMcGrath/deploy.git</a></div><div class="line">cd deploy</div></pre></td></tr></table></figure>
+<p>Now as long as your in the deploy directory, the fab command should work for deployment and management.  To get a list of the available commands, run <code>fab -l</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">(fabric)tnsmbp:deployment smcgrath$ fab -l</div><div class="line">Available commands:</div><div class="line"></div><div class="line">    nessus.install      Installs/Updates Nessus.</div><div class="line">    nessus.plugin_push  Pushes plugin tarball to the remote scanner.</div><div class="line">    nessus.prep         Prepares a vanilla system for use as a Nessus scanner.</div><div class="line">    prep.prep           Generic preparation script for CentOS/RHEL boxen.</div><div class="line">    prep.rmate          Installs the rmate shell script into /usr/local/bin</div><div class="line">    prep.sshkeys        Pushes the management keys to remote server.</div><div class="line">    prep.template       Performs the needed actions to make the host templatable.</div><div class="line">    prep.update         Updates the OS to current</div><div class="line">    pvs.install         Installs/Updates PVS.</div><div class="line">    pvs.prep            Prepares a vanilla system for use as a PVS sensor.</div><div class="line">    sc.getfeed          Pulls the plugin feeds from SecurityCenter to the local box.</div><div class="line">(fabric)tnsmbp:deployment smcgrath$</div><div class="line">`</div></pre></td></tr></table></figure></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -479,6 +480,31 @@
                                 
                             </span>
                         </span>
+                        <div class="media-content hide-xs font-merryweather"><p>So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH installed, and a few aliases to make things easy to work with.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> All of the operations below assume a basic understanding of terminal commands!</p>
+</blockquote>
+<h3 id="Updating-the-PocketCHIP-and-installing-the-software"><a href="#Updating-the-PocketCHIP-and-installing-the-software" class="headerlink" title="Updating the PocketCHIP and installing the software"></a>Updating the PocketCHIP and installing the software</h3><p>To start off, the PocketCHIP OS is slightly out of date as it’s currently being flashed, so the first thing we need to do is update the OS to current:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<p>Now lets go ahead and install the needed packages (Note: “\” and lines are used here for page cleanliness).</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://stevemcgrath.io/2016/10/10/TrafficWatch/">
+                            <h3 class="media-heading">TrafficWatch</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    Oct 10, 2016
+                                
+                            </span>
+                        </span>
                         <div class="media-content hide-xs font-merryweather"></div>
                     </div>
                     <div style="clear:both;"></div>
@@ -492,7 +518,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                5 posts found
+                6 posts found
             </p>
         </div>
     </div>
