@@ -35,7 +35,7 @@ Available commands:
 
 Before we run anything, you will need to copy the `fabfile/config.py-dist` file to `fabfile/config.py` and make the appropriate changes in this file.  Once thats done, it should be a simple matter of running the appropriate command against a host.  Note all of the output is whats being returned back from the remote system as the commands are being run, and while generally can be ignored if everything went as expected, this output can be useful when things go awry.	
 
-````
+```
 (fabric)tnsmbp:deployment smcgrath$ fab -H scanner1.home.cugnet.net nessus.install
 [scanner1.home.cugnet.net] Executing task 'nessus.install'
 [scanner1.home.cugnet.net] run: rpm -qa Nessus

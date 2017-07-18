@@ -12,7 +12,7 @@ So I got a couple of these fantastic little embedded systems from Next Thing, an
 
 To start off, the PocketCHIP OS is slightly out of date as it's currently being flashed, so the first thing we need to do is update the OS to current:
 
-```
+```bash
 sudo apt-get update
 ```
 
@@ -39,12 +39,12 @@ So now technically all of the software was installed (that was easy), but now we
 
 with the small keyboard, it makes a lot of sense to build-in some aliases to commonly-used commands.  This will save a lot of keystrokes overall and can only improve the overall experience.  I prefer to shim into the user profile in a manner that means that I'm not constantly editing the default user profiles, as there is plenty in there that you simply don't want to touch.  To do this, we will do the following:
 
-__Step 1:__ create the profile scripts directory.  This directory will house our custom additions to the shell environment and allows us to more easily extend the shell in a safer manner.
+**Step 1:** create the profile scripts directory.  This directory will house our custom additions to the shell environment and allows us to more easily extend the shell in a safer manner.
 ```bash
 mkdir -p ~/.profile_scripts
 ```
 
-__Step 2:__ using either `vi` or `nano`, we will need to append the following to the end of the `~/.bashrc` file:
+**Step 2:** using either `vi` or `nano`, we will need to append the following to the end of the `~/.bashrc` file:
 
 ```bash
 # This is a shim to allow for multiple profile script to exist in the
@@ -56,7 +56,7 @@ done
 unset SCRIPT_NAME
 ```
 
-__Step 3:__ Now that the user's profile is set to load anything with a .sh extension into the profile, lets create an aliases file and input the aliases that we want to use.  Using either `vi` or `nano`, create a new file at `~/.profile_scripts/aliases.sh` and input the following into the file (and feel free to modify as you see fit):
+**Step 3:** Now that the user's profile is set to load anything with a .sh extension into the profile, lets create an aliases file and input the aliases that we want to use.  Using either `vi` or `nano`, create a new file at `~/.profile_scripts/aliases.sh` and input the following into the file (and feel free to modify as you see fit):
 
 ```bash
 # Enable the SSH Daemon
@@ -87,7 +87,7 @@ alias sagU="sudo apt-get upgrade"
 alias sags="apt-cache search"
 ```
 
-__Step 4__: Now to get these changes to apply to the current shell, you simply need to `source ~/.bashrc` and it will reload the shell environment based on these new settings.
+**Step 4**: Now to get these changes to apply to the current shell, you simply need to `source ~/.bashrc` and it will reload the shell environment based on these new settings.
 
 ### Adding the Browser to to the Home screen
 
