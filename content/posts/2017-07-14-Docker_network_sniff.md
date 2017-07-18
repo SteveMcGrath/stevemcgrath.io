@@ -42,7 +42,7 @@ Everything is all plumbed up now!  The next step is to create the docker network
 ```bash
 docker network create -d bridge --internal -o com.docker.network.bridge.name=span0 span
 ```
-``
+
 Now if we want to test this, we can build a really simple ubuntu docker container and install tcpdump within it:
 
 ```bash
