@@ -103,9 +103,10 @@ Available commands:
 
 Before we run anything, you will need to copy the `fabfile/config.py-dist` file to `fabfile/config.py` and make the appropriate changes in this file.  Once thats done, it should be a simple matter of running the appropriate command against a host.  Note all of the output is whats being returned back from the remote system as the commands are being run, and while generally can be ignored if everything went as expected, this output can be useful when things go awry.	
 
-````
-(fabric)tnsmbp:deployment smcgrath$ fab -H scanner1.home.cugnet.net nessus.install
-[scanner1.home.cugnet.net] Executing task 'nessus.install'
+</code></pre>
+
+<p>(fabric)tnsmbp:deployment smcgrath$ fab -H scanner1.home.cugnet.net nessus.install
+[scanner1.home.cugnet.net] Executing task &lsquo;nessus.install&rsquo;
 [scanner1.home.cugnet.net] run: rpm -qa Nessus
 [scanner1.home.cugnet.net] out: Nessus-6.5.2-es6.x86_64
 [scanner1.home.cugnet.net] out:
@@ -114,11 +115,11 @@ Nessus-6.5.4-es6.x86_64.rpm
 [scanner1.home.cugnet.net] run: yum -y -q install /tmp/Nessus.rpm
 [scanner1.home.cugnet.net] out: Shutting down Nessus services: [  OK  ]
 [scanner1.home.cugnet.net] out:
-[scanner1.home.cugnet.net] out: Unpacking Nessus Core Components...
+[scanner1.home.cugnet.net] out: Unpacking Nessus Core Components&hellip;
 [scanner1.home.cugnet.net] out: nessusd (Nessus) 6.5.4 [build M20044] for Linux
-[scanner1.home.cugnet.net] out: Copyright (C) 1998 - 2015 Tenable Network Security, Inc
+[scanner1.home.cugnet.net] out: Copyright &copy; 1998 - 2015 Tenable Network Security, Inc
 [scanner1.home.cugnet.net] out:
-[scanner1.home.cugnet.net] out: Processing the Nessus plugins...
+[scanner1.home.cugnet.net] out: Processing the Nessus plugins&hellip;
 [scanner1.home.cugnet.net] out:
 [scanner1.home.cugnet.net] out: [##                                                ]
 [scanner1.home.cugnet.net] out: [###                                               ]
@@ -173,33 +174,32 @@ Nessus-6.5.4-es6.x86_64.rpm
 [scanner1.home.cugnet.net] out:
 [scanner1.home.cugnet.net] out: All plugins loaded (472sec)
 [scanner1.home.cugnet.net] out:  - You can start Nessus by typing /sbin/service nessusd start
-[scanner1.home.cugnet.net] out:  - Then go to https://scanner1.home.cugnet.net:8834/ to configure your scanner
+[scanner1.home.cugnet.net] out:  - Then go to <a href="https://scanner1.home.cugnet.net:8834/">https://scanner1.home.cugnet.net:8834/</a> to configure your scanner
 [scanner1.home.cugnet.net] out:
-[scanner1.home.cugnet.net] out:
+[scanner1.home.cugnet.net] out:</p>
 
-[scanner1.home.cugnet.net] run: service nessusd stop
+<p>[scanner1.home.cugnet.net] run: service nessusd stop
 [scanner1.home.cugnet.net] out: Shutting down Nessus servic[FAILED]
 [scanner1.home.cugnet.net] out:
-[scanner1.home.cugnet.net] out:
+[scanner1.home.cugnet.net] out:</p>
 
-[scanner1.home.cugnet.net] run: rm -f /tmp/Nessus.rpm
+<p>[scanner1.home.cugnet.net] run: rm -f /tmp/Nessus.rpm
 [scanner1.home.cugnet.net] put: /Users/smcgrath/Dropbox/Repositories/Projects/deployment/fabfile/../tmp/all-2.0.tar.gz -&gt; /tmp/plugins.tar.gz
 [scanner1.home.cugnet.net] run: /opt/nessus/sbin/nessuscli update /tmp/plugins.tar.gz
 [scanner1.home.cugnet.net] out:
 [scanner1.home.cugnet.net] out:  * Update successful.  The changes will be automatically processed by Nessus.
-[scanner1.home.cugnet.net] out:
+[scanner1.home.cugnet.net] out:</p>
 
-[scanner1.home.cugnet.net] run: rm -f /tmp/plugins.tar.gz
+<p>[scanner1.home.cugnet.net] run: rm -f /tmp/plugins.tar.gz
 [scanner1.home.cugnet.net] run: service nessusd start
 [scanner1.home.cugnet.net] out: Starting Nessus services:  [  OK  ]
 [scanner1.home.cugnet.net] out:
-[scanner1.home.cugnet.net] out:
+[scanner1.home.cugnet.net] out:</p>
 
-
-Done.
-Disconnecting from scanner1.home.cugnet.net... done.
+<p>Done.
+Disconnecting from scanner1.home.cugnet.net&hellip; done.
 (fabric)tnsmbp:deployment smcgrath$
-</code></pre>
+```</p>
 
 <p>You can even assign <em>roles</em>, or classes of systems if you want to work on multiple machines at once.  In general, there is a lot of power with fabric to build and maintain systems centrally without any agent installed on them (unlike Chef or Puppet) and has been my primary way to manage the hosts that I have.  I know the trade-offs between agent-based solutions and agent-less ones like fabric and ansible, and I just seem to prefer agent-less.</p>
 
