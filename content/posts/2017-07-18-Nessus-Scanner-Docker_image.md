@@ -8,7 +8,10 @@ A lot of the Nessus Scanner docker images in Docker Hub don't appear to be prope
 
 ```bash
 docker volume create nessus_scanner_var
-docker run -d -v nessus_scanner_var:/opt/nessus/var/nessus -e LINKING_KEY=${LINKING_KEY} stevemcgrath/nessus_scanner:latest
+docker run -d -v nessus_scanner_var:/opt/nessus/var/nessus \
+		--name=nessus_scanner \
+		-e SCANNER_NAME=${SCANNER_NAME}	\
+		-e LINKING_KEY=${LINKING_KEY} stevemcgrath/nessus_scanner:latest
 ```
 
 For more detailed information, feel free to take a look at both the [Docker Hub page](https://hub.docker.com/r/stevemcgrath/nessus_scanner/) and the [Github repo](https://github.com/stevemcgrath/docker-nessus_scanner).
