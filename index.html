@@ -61,6 +61,30 @@
     <div class="container">
       
       <article>
+        <h2 class="subtitle is-6">July 18, 2017</h2>
+        <h1 class="title"><a href="http://stevemcgrath.io/2017/07/nessus-scanner-docker-image/">Nessus Scanner Docker Image</a></h1>
+        
+        <div class="tags">
+    
+        <a class="button is-link" href="/tags/docker">docker</a>
+    
+</div>
+
+        
+        <div class="content">
+          A lot of the Nessus Scanner docker images in Docker Hub don&rsquo;t appear to be properly parameterizing a lot (or in many cases, any) of the required inputs to really get the scanner to run and connect up in an automated fashion. Further most of the images that I&rsquo;ve seen out there aren&rsquo;t cleaning up the identifying information the scanner created as part of install (such as the UUID, the master encryption key, etc.
+          
+          ...<a class="button is-link" href="http://stevemcgrath.io/2017/07/nessus-scanner-docker-image/" style="height:28px">
+            Read more
+            <span class="icon is-small">
+              <i class="fa fa-angle-double-right"></i>
+            </span>
+          </a>
+          
+        </div>
+      </article>
+      
+      <article>
         <h2 class="subtitle is-6">July 14, 2017</h2>
         <h1 class="title"><a href="http://stevemcgrath.io/2017/07/docker-containers--network-sniffing/">Docker Containers &amp; Network Sniffing</a></h1>
         
@@ -72,7 +96,7 @@
 
         
         <div class="content">
-          With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find. I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&rsquo;s host networking (which means that these containers can&rsquo;t exist in other network namespaces), use passthrough networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.
+          With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find. I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&rsquo;s host networking (which means that these containers can&rsquo;t exist in other network name-spaces), use pass-through networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.
           
           ...<a class="button is-link" href="http://stevemcgrath.io/2017/07/docker-containers--network-sniffing/" style="height:28px">
             Read more
