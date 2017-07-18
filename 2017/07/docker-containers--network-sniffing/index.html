@@ -107,8 +107,7 @@ iface span0 inet manual
 <pre><code class="language-bash">docker network create -d bridge --internal -o com.docker.network.bridge.name=span0 span
 </code></pre>
 
-<p>``
-Now if we want to test this, we can build a really simple ubuntu docker container and install tcpdump within it:</p>
+<p>Now if we want to test this, we can build a really simple ubuntu docker container and install tcpdump within it:</p>
 
 <pre><code class="language-bash">docker run -it --rm --name=spantest ubuntu:16.04 /bin/bash
 </code></pre>
