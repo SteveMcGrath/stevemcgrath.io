@@ -1,0 +1,48 @@
+languageCode = "en-us"
+theme = "hemingway2"
+title = "SteveMcGrath.io"
+description = "Ramblings of a Security Nerd"
+baseURL = "http://stevemcgrath.io/"
+author = "Steve McGrath"
+language = "en"
+timezone = "US/Central"
+copyright = "&copy; <a href=\"https://github.com/stevemcgrath\">Steve McGrath</a> 2017"
+googleAnalytics = ""
+keywords = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
+
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+posts = "/:year/:month/:title/"
+
+[params]
+
+[params.highlight]
+style = "github"
+languages = ["javascript", "bash", "python", "dockerfile", "json", "ini"]
+
+[[params.social]]
+url = "https://github.com/stevemcgrath"
+fa_icon = "fa-github"
+
+[[params.social]]
+url = "https://twitter.com/stevemcgrath"
+fa_icon = "fa-twitter"
+
+[[params.social]]
+url = "https://www.reddit.com/user/stevemcgrath"
+fa_icon = "fa-reddit"
+
+[[params.social]]
+url = "https://www.linkedin.com/in/chigeek/"
+fa_icon = "fa-linkedin"
+
+[[params.social]]
+url = "/index.xml"
+fa_icon = "fa-rss"
+
+[deploy]
+type = "git"
+repo = "https://github.com/SteveMcGrath/stevemcgrath.io.git"
+branch = "master"
