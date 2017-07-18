@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="" name="keywords">
-<meta content="Nessus Scanner Docker Image - SteveMcGrath.io" property="og:title">
-<title>Nessus Scanner Docker Image | SteveMcGrath.io</title>
+<meta content="Nessus Network Monitor Docker Image - SteveMcGrath.io" property="og:title">
+<title>Nessus Network Monitor Docker Image | SteveMcGrath.io</title>
 <link rel="stylesheet" href="http://stevemcgrath.io//css/style.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -60,7 +60,7 @@
   <section class="section">
     <div class="container">
       <h2 class="subtitle is-6">July 18, 2017</h2>
-      <h1 class="title">Nessus Scanner Docker Image</h1>
+      <h1 class="title">Nessus Network Monitor Docker Image</h1>
       
       <div class="tags">
     
@@ -70,16 +70,20 @@
 
       
       <div class="content">
-        <p>A lot of the Nessus Scanner docker images in Docker Hub don&rsquo;t appear to be properly parameterizing a lot (or in many cases, <em>any</em>) of the required inputs to really get the scanner to run and connect up in an automated fashion.  Further most of the images that I&rsquo;ve seen out there aren&rsquo;t cleaning up the identifying information the scanner created as part of install (such as the UUID, the master encryption key, etc.).  As a result of this, I&rsquo;ve released my own Nessus Scanner docker image that takes a lot of this into account.  Deploying the scanner should be a simple matter of setting up a volume for the scanner data (for persistence) and then instantiating it:</p>
+        <p>Considering there wasn&rsquo;t any Nessus Network Monitor docker images that I could find, I decided I&rsquo;d create one.  Using the Nessus Scanner image as a starting point, this image should have a lot of the most common things parameterized out already.  As for sniffing traffic, I&rsquo;d highly encourage you to take a look at one of the earlier posts covering Docker &amp; packet sniffing.  Deploying the sensor should be a simple matter of setting up a volume for the sensor data (for persistence), linking it to a promiscuous interface, and then instantiating it:</p>
 
-<pre><code class="language-bash">docker volume create nessus_scanner_var
-docker run -d -v nessus_scanner_var:/opt/nessus/var/nessus \
-		--name=nessus_scanner \
-		-e SCANNER_NAME=${SCANNER_NAME}	\
-		-e LINKING_KEY=${LINKING_KEY} stevemcgrath/nessus_scanner:latest
+<pre><code class="language-bash">docker volume create nessus_monitor_var
+docker create -v nessus_monitor_var:/opt/pvs/var/pvs \
+		--name=nessus_monitor \
+		-e SCANNER_NAME=${SCANNER_NAME} \
+		-e LINKING_KEY=${LINKING_KEY} \
+		-e MONITOR_INTERFACE=eth1 \
+		stevemcgrath/nessus_monitor:latest
+docker network connect span nessus_monitor
+docker start nessus_monitor
 </code></pre>
 
-<p>For more detailed information, feel free to take a look at both the <a href="https://hub.docker.com/r/stevemcgrath/nessus_scanner/">Docker Hub page</a> and the <a href="https://github.com/stevemcgrath/docker-nessus_scanner">Github repo</a>.</p>
+<p>For more detailed information, feel free to take a look at both the <a href="https://hub.docker.com/r/stevemcgrath/nessus_monitor/">Docker Hub page</a> and the <a href="https://github.com/stevemcgrath/docker-nessus_monitor">Github repo</a>.</p>
 
       </div>
     </div>

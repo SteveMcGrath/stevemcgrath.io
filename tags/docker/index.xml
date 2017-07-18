@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Tue, 18 Jul 2017 08:10:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jul 2017 12:26:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nessus Network Monitor Docker Image</title>
+      <link>http://stevemcgrath.io/2017/07/nessus-network-monitor-docker-image/</link>
+      <pubDate>Tue, 18 Jul 2017 12:26:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2017/07/nessus-network-monitor-docker-image/</guid>
+      <description>Considering there wasn&amp;rsquo;t any Nessus Network Monitor docker images that I could find, I decided I&amp;rsquo;d create one. Using the Nessus Scanner image as a starting point, this image should have a lot of the most common things parameterized out already. As for sniffing traffic, I&amp;rsquo;d highly encourage you to take a look at one of the earlier posts covering Docker &amp;amp; packet sniffing. Deploying the sensor should be a simple matter of setting up a volume for the sensor data (for persistence), linking it to a promiscuous interface, and then instantiating it:</description>
+    </item>
     
     <item>
       <title>Nessus Scanner Docker Image</title>
