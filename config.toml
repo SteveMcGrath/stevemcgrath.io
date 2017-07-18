@@ -3,12 +3,14 @@ theme = "hemingway2"
 title = "SteveMcGrath.io"
 description = "Ramblings of a Security Nerd"
 baseURL = "http://stevemcgrath.io/"
-author = "Steve McGrath"
 language = "en"
 timezone = "US/Central"
 copyright = "&copy; <a href=\"https://github.com/stevemcgrath\">Steve McGrath</a> 2017"
 googleAnalytics = ""
 keywords = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
+
+[author]
+name = "Steve McGrath"
 
 [taxonomies]
 tag = "tags"
