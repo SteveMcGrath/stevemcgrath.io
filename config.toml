@@ -6,7 +6,7 @@ baseURL = "http://stevemcgrath.io/"
 language = "en"
 timezone = "US/Central"
 copyright = "&copy; <a href=\"https://github.com/stevemcgrath\">Steve McGrath</a> 2017"
-googleAnalytics = ""
+googleAnalytics = "UA-79231696-1"
 keywords = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
 
 [author]
