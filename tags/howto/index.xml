@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Howto on SteveMcGrath.io</title>
+    <link>http://stevemcgrath.io/tags/howto/</link>
+    <description>Recent content in Howto on SteveMcGrath.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Sat, 16 Jul 2016 17:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/howto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up PocketCHIP</title>
+      <link>http://stevemcgrath.io/2016/07/setting-up-pocketchip/</link>
+      <pubDate>Sat, 16 Jul 2016 17:58:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2016/07/setting-up-pocketchip/</guid>
+      <description>So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup. Basically I was looking for a web browser, SSH installed, and a few aliases to make things easy to work with.
+ NOTE: All of the operations below assume a basic understanding of terminal commands!
+ Updating the PocketCHIP and installing the software To start off, the PocketCHIP OS is slightly out of date as it&amp;rsquo;s currently being flashed, so the first thing we need to do is update the OS to current:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on SteveMcGrath.io</title>
+    <link>http://stevemcgrath.io/tags/</link>
+    <description>Recent content in Tags on SteveMcGrath.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Sat, 16 Jul 2016 17:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chip</title>
+      <link>http://stevemcgrath.io/tags/chip/</link>
+      <pubDate>Sat, 16 Jul 2016 17:58:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/chip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conferences</title>
+      <link>http://stevemcgrath.io/tags/conferences/</link>
+      <pubDate>Tue, 14 Jun 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cugnet</title>
+      <link>http://stevemcgrath.io/tags/cugnet/</link>
+      <pubDate>Wed, 15 Jul 2015 12:12:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/cugnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deployment</title>
+      <link>http://stevemcgrath.io/tags/deployment/</link>
+      <pubDate>Wed, 13 Jan 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>http://stevemcgrath.io/tags/docker/</link>
+      <pubDate>Fri, 14 Jul 2017 17:15:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dofler</title>
+      <link>http://stevemcgrath.io/tags/dofler/</link>
+      <pubDate>Tue, 14 Jun 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/dofler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fabric</title>
+      <link>http://stevemcgrath.io/tags/fabric/</link>
+      <pubDate>Wed, 13 Jan 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/fabric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Maps</title>
+      <link>http://stevemcgrath.io/tags/google-maps/</link>
+      <pubDate>Mon, 10 Oct 2016 19:26:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/google-maps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>http://stevemcgrath.io/tags/howto/</link>
+      <pubDate>Sat, 16 Jul 2016 17:58:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://stevemcgrath.io/tags/linux/</link>
+      <pubDate>Sat, 16 Jul 2016 17:58:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://stevemcgrath.io/tags/nodejs/</link>
+      <pubDate>Mon, 10 Oct 2016 19:26:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pocketchip</title>
+      <link>http://stevemcgrath.io/tags/pocketchip/</link>
+      <pubDate>Sat, 16 Jul 2016 17:58:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/pocketchip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://stevemcgrath.io/tags/python/</link>
+      <pubDate>Wed, 13 Jan 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Securitycenter</title>
+      <link>http://stevemcgrath.io/tags/securitycenter/</link>
+      <pubDate>Wed, 15 Jul 2015 00:21:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/securitycenter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tenable</title>
+      <link>http://stevemcgrath.io/tags/tenable/</link>
+      <pubDate>Wed, 15 Jul 2015 00:21:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/tenable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vps</title>
+      <link>http://stevemcgrath.io/tags/vps/</link>
+      <pubDate>Wed, 15 Jul 2015 12:12:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

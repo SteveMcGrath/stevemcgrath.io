@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on SteveMcGrath.io</title>
+    <link>http://stevemcgrath.io/tags/python/</link>
+    <description>Recent content in Python on SteveMcGrath.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Wed, 13 Jan 2016 10:02:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Initial Deployment Files Release</title>
+      <link>http://stevemcgrath.io/2016/01/initial-deployment-files-release/</link>
+      <pubDate>Wed, 13 Jan 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2016/01/initial-deployment-files-release/</guid>
+      <description>I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption. These fabric scripts cover a variety of tasks from deployment and maintenance of various products to deploying some of my code. I will be updating the repository as needs arise, and as always am welcome to any input.
+Using my fabric files is actually pretty simple, however you need to have fabric installed on your workstation before anything will work.</description>
+    </item>
+    
+    <item>
+      <title>pySecurityCenter 2.1 Release</title>
+      <link>http://stevemcgrath.io/2015/07/pysecuritycenter-2.1-release/</link>
+      <pubDate>Wed, 15 Jul 2015 00:21:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2015/07/pysecuritycenter-2.1-release/</guid>
+      <description>I&amp;rsquo;m proud to announce the general availability for pySecurityCenter version 2.1.x accessible from PyPI immediately. pySC 2.1 supports connectivity to SecurityCenter 5, which leverages a completely new RESTful API. Because of this, the pySC SecurityCenter 5 support will be an evolving process. Whats implemented today will not be changing, however many of the convenience functions that pySecurityCenter has for SecurityCenter 4.x have not been coded into the SC5 module, as enumeration for the API is still active.</description>
+    </item>
+    
+  </channel>
+</rss>

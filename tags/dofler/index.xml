@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dofler on SteveMcGrath.io</title>
+    <link>http://stevemcgrath.io/tags/dofler/</link>
+    <description>Recent content in Dofler on SteveMcGrath.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Tue, 14 Jun 2016 10:02:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/dofler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dofler at CircleCityCon3</title>
+      <link>http://stevemcgrath.io/2016/06/dofler-at-circlecitycon3/</link>
+      <pubDate>Tue, 14 Jun 2016 10:02:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2016/06/dofler-at-circlecitycon3/</guid>
+      <description>Aside from a few hiccups that delayed getting Dofler installed and fully functional until mid-day Saturday, Dofler was a fantastical success at CircleCityCon! We discovered that the new codebase Dofler sits on was catching more entertainment than ever, including some MJPEG-based webcams:
+GREAT JOB to whomever is checking their MJPEG home security system via HTTP on the con network. #dofler pic.twitter.com/MiD6jSR8lz
+&amp;mdash; Circle City Con (@CircleCityCon) June 11, 2016</description>
+    </item>
+    
+  </channel>
+</rss>

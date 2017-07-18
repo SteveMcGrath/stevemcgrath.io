@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on SteveMcGrath.io</title>
+    <link>http://stevemcgrath.io/tags/nodejs/</link>
+    <description>Recent content in Nodejs on SteveMcGrath.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Mon, 10 Oct 2016 19:26:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TrafficWatch</title>
+      <link>http://stevemcgrath.io/2016/10/trafficwatch/</link>
+      <pubDate>Mon, 10 Oct 2016 19:26:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/2016/10/trafficwatch/</guid>
+      <description>TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon&amp;rsquo;s traffic time-lapse-helper project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour. There are some arguments that you can specity as well if you want look at somethign other than Chicago traffic:
+ &amp;ndash;name / -n Name for the GIF in the upper-left corner &amp;ndash;url / -u URL String for that we will be time-lapsing &amp;ndash;interval / -i The time interval (in minutes) &amp;ndash;duration / -d The number of minutes to run &amp;ndash;gifout / -g The output filename for the GIF &amp;ndash;xoffset X Offset for the crop (0 means centered) &amp;ndash;yoffset Y Offset for the crop (0 means centered) &amp;ndash;font Font for the name and time display in the upper-left corner (default is Arial) &amp;ndash;fontsize Size of the text (default is 32) &amp;ndash;fontcolor Color of the text (default is #000000b0) &amp;ndash;directory Path for the individual screencaps (default is screenshots) &amp;ndash;gifdelay The ms delay timer for the GIF animation (default 500)  An example output would look something like this:</description>
+    </item>
+    
+  </channel>
+</rss>

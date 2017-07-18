@@ -1,0 +1,162 @@
+<body>
+  <!DOCTYPE html>
+<html lang="en-us">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="" name="keywords">
+<meta content="Docker Containers &amp; Network Sniffing - SteveMcGrath.io" property="og:title">
+<title>Docker Containers &amp; Network Sniffing | SteveMcGrath.io</title>
+<link rel="stylesheet" href="http://stevemcgrath.io//css/style.css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+  <section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://stevemcgrath.io//"><h1 class="title is-4">SteveMcGrath.io</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/stevemcgrath">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/stevemcgrath">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.reddit.com/user/stevemcgrath">
+            <span class="icon">
+              <i class="fa fa-reddit"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.linkedin.com/in/chigeek/">
+            <span class="icon">
+              <i class="fa fa-linkedin"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="subtitle is-6">July 14, 2017</h2>
+      <h1 class="title">Docker Containers &amp; Network Sniffing</h1>
+      
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/docker">docker</a>
+    
+</div>
+
+      
+      <div class="content">
+        <p>With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find.  I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&rsquo;s host networking (which means that these containers can&rsquo;t exist in other network namespaces), use passthrough networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.  I figured there had to be a more elegant solution, and after quite some time of on-and-off looking around for different solutions I had the sudden realization that I was approaching the problem from the wrong angle.  Instead of trying to get docker to bend to my use case, I needed to focus on the network bridging itself.  Now with a new focus, finding the solution only took an hour or two, ended up being extremely elegant, and is very survivable.  Further, as I don&rsquo;t need any weird hackery, none of the containers sniffing the network need privileged access, so no need to worry about special needs containers.</p>
+
+<p>As a basis for what I&rsquo;m doing here, I have an Ubuntu 16.04 host running Docker CE and it has a few network interfaces:</p>
+
+<ul>
+<li><strong>ens160</strong> - Server VLAN traffic</li>
+<li><strong>ens192</strong> - Mirrored traffic from the Cisco switch</li>
+</ul>
+
+<p>The first step in this little adventure is to download the <a href="https://github.com/SteveMcGrath/mirror_tools">mirroring script</a> and install it onto the host.  While the method below is quick &amp; dirty, remember to always validate what your downloading to your systems.</p>
+
+<pre><code class="language-bash">wget -O /usr/bin/tc-mirror https://raw.githubusercontent.com/SteveMcGrath/mirror_tools/master/tc-mirror.sh
+chmod 755 /usr/bin/tc-mirror
+</code></pre>
+
+<p>Now the goal here is to push the mirrored traffic from ens192 into a docker network.  To start, we will want to create a bridge on the host which I will call <em>span0</em>.  The <em>/etc/network/interfaces</em> configuration for this bridge looks like so:</p>
+
+<pre><code>auto span0
+iface span0 inet manual
+        bridge_stp off
+        bridge_fd 0
+        bridge_maxwait 0
+        bridge_ageing 0
+        post-up /usr/bin/tc-mirror build enp3s0 span0
+        pre-down /usr/sbin/tc-mirror teardown enp3s0
+</code></pre>
+
+<p>I want to point out something here, specifically the <strong>bridge_ageing 0</strong> line.  This single parameter is telling the Linux kernel to disable <em>MAC address learning</em> capability that normally comes built-in on every linux bridge.  Without this capability turned on, we have effectively disabled the MAC learning table, which is the heart of the switching capability within the bridge.  The bridge itself is now effectively a simple packet forwarder to all of the interfaces attached to the bridge, which is what we want in this case.  Now to restart the networking on the Ubuntu host to inform it to bring up the new interface (and to auto-build the bridge at boot from now on)</p>
+
+<pre><code class="language-bash">systemctl restart networking
+</code></pre>
+
+<p>Everything is all plumbed up now!  The next step is to create the docker network and tell docker to use the existing bridge that we have already created instead of building a new one.  We also want to make sure that we inform docker this this is not a network we want to route with, so we mark it as &ldquo;internal&rdquo; only.</p>
+
+<pre><code class="language-bash">docker network create -d bridge --internal -o com.docker.network.bridge.name=span0 span
+</code></pre>
+
+<p>``
+Now if we want to test this, we can build a really simple ubuntu docker container and install tcpdump within it:</p>
+
+<pre><code class="language-bash">docker run -it --rm --name=spantest ubuntu:16.04 /bin/bash
+</code></pre>
+
+<p>Once the container drops you into a shell:</p>
+
+<pre><code class="language-bash">apt update &amp;&amp; apt -y install tcpdump
+</code></pre>
+
+<p>Now that tcpdump is installed, lets go ahead and add the span network to the container in another window:</p>
+
+<pre><code class="language-bash">docker network connect span spantest
+</code></pre>
+
+<p>Lets go ahead and start tcpdump!</p>
+
+<pre><code class="language-bash">tcpdump -i eth1
+</code></pre>
+
+<p>If all went well, you should now see all of the mirrored traffic on the container.  No elevated privileges or hackery, just a regular old container.  Secondly this allows for multiple containers to be attached to the same single mirror, allowing for multiple tools to get the same data (which is a requirement in my case for Dofler).</p>
+
+<p>It really is that simple &amp; elegant.  I can only imagine the doors this opens up for folks, especially in the network security community with things such as snort, suricata, bro, and even Tenable&rsquo;s own Nessus Network Monitor.</p>
+
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/stevemcgrath">Steve McGrath</a> 2017</p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ini.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
