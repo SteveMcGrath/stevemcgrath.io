@@ -1,48 +1,57 @@
-languageCode = "en-us"
-theme = "hemingway2"
-title = "SteveMcGrath.io"
-description = "Ramblings of a Security Nerd"
-baseURL = "http://stevemcgrath.io/"
-language = "en"
-timezone = "US/Central"
-copyright = "&copy; <a href=\"https://github.com/stevemcgrath\">Steve McGrath</a> 2017"
-googleAnalytics = "UA-79231696-1"
-keywords = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
+languageCode        = "en-us"
+theme               = "blackburn"
+title               = "Steve McGrath"
+author              = "Steve McGrath"
+baseurl             = "http://stevemcgrath.io/"
+language            = "en"
+timezone            = "US/Central"
+canonifyurls        = true
+paginate            = 10
+copyright           = "&copy; Steve McGrath 2018"
+keywords            = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
 
-[author]
-name = "Steve McGrath"
-
-[taxonomies]
-tag = "tags"
-
-[permalinks]
-posts = "/:year/:month/:title/"
+[indexes]
+    tag = "tags"
+    topic = "topics"
 
 [params]
+    subtitle        = "Ramblings of a Security Nerd"
+    brand           = "SteveMcGrath"
+    googleAnalytics = "UA-79231696-1"
+    highlightjs     = "github"
+    highlightjs_extra_languages = ["yaml", "bash", "go", "dockerfile", "json", "markdown", "nginx"]
+    dateFormat      = "02 Jan 06 15:04"
 
-[params.highlight]
-style = "github"
-languages = ["javascript", "bash", "python", "dockerfile", "json", "ini"]
+[menu]
+    [[menu.main]]
+        name        = "Home"
+        pre         = "<i class='fa fa-home fa-fw'></i>"
+        weight      = 1
+        identifier  = "home"
+        url         = "/"
 
-[[params.social]]
-url = "https://github.com/stevemcgrath"
-fa_icon = "fa-github"
+    [[menu.main]]
+        name        = "Posts"
+        pre         = "<i class='fa fa-list fa-fw'></i>"
+        weight      = 2
+        identifier  = "post"
+        url         = "/post/"
 
-[[params.social]]
-url = "https://twitter.com/stevemcgrath"
-fa_icon = "fa-twitter"
+    [[menu.main]]
+        name        = "About"
+        pre         = "<i class='fa fa-user fa-fw'></i>"
+        weight      = 3
+        identifier  = "about"
+        url         = "/about/"
 
-[[params.social]]
-url = "https://www.reddit.com/user/stevemcgrath"
-fa_icon = "fa-reddit"
-
-[[params.social]]
-url = "https://www.linkedin.com/in/chigeek/"
-fa_icon = "fa-linkedin"
-
-[[params.social]]
-url = "/index.xml"
-fa_icon = "fa-rss"
+[social]
+    twitter         = "stevemcgrath"
+    facebook        = "chigeek"
+    linkedin        = "chigeek"
+    reddit          = "stevemcgrath"
+    github          = "stevemcgrath"
+    bitbucket       = "stevemcgrath"
+    keybase         = "stevemcgrath"
 
 [deploy]
 type = "git"
