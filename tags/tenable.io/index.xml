@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tenable.io on Steve McGrath</title>
+    <link>http://stevemcgrath.io/tags/tenable.io/</link>
+    <description>Recent content in Tenable.io on Steve McGrath</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <lastBuildDate>Wed, 03 Oct 2018 09:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/tenable.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pyTenable v0.1.0 Released</title>
+      <link>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</link>
+      <pubDate>Wed, 03 Oct 2018 09:12:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</guid>
+      <description>After nearly 8 months of on-and-off development (mostly off, day-job work keeps my busy), I&amp;rsquo;m proud to announce that pyTenable has hit version 0.1.0. While this may not seem like much, it&amp;rsquo;s been a lot of work to bring it across this line in the journey so far. All of the Tenable.io Vulnerability Management API are now pythonized. Further everything in the tenable_io module has been tested out (519 tests!). Tenable has also seen fit to link to pyTenable as an official module for working with our products.</description>
+    </item>
+    
+  </channel>
+</rss>

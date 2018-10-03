@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cugnet on SteveMcGrath.io</title>
+    <title>Cugnet on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/cugnet/</link>
-    <description>Recent content in Cugnet on SteveMcGrath.io</description>
+    <description>Recent content in Cugnet on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <copyright>&amp;copy; Steve McGrath 2018</copyright>
     <lastBuildDate>Wed, 15 Jul 2015 12:12:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/cugnet/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
     
     <item>
       <title>CUGNet VPS Services Closing</title>
-      <link>http://stevemcgrath.io/2015/07/cugnet-vps-services-closing/</link>
+      <link>http://stevemcgrath.io/post/2015-07-15-cugnet-vps-services-closing/</link>
       <pubDate>Wed, 15 Jul 2015 12:12:00 +0000</pubDate>
       
-      <guid>http://stevemcgrath.io/2015/07/cugnet-vps-services-closing/</guid>
+      <guid>http://stevemcgrath.io/post/2015-07-15-cugnet-vps-services-closing/</guid>
       <description>After running CUGNet for a dozen or so years and having yet to break even, last week I made the hard decision to close down CUGNet&amp;rsquo;s VPS services. It was a hard choice to make, as its something that I have done for many years, however with the propensity of cloud services and VPS providers out there, What I can offer is simply not competitive and the I need to start cutting down on the number of side projects that I have been running in order to keep my own sanity.</description>
     </item>
     

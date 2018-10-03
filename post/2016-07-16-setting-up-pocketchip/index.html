@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.47.1" />
+
+  <title>Setting up PocketCHIP &middot; Steve McGrath</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://stevemcgrath.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://stevemcgrath.io/">SteveMcGrath</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/stevemcgrath" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/chigeek" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/chigeek" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://reddit.com/user/stevemcgrath" target="_blank"><i class="fa fa-reddit-square fa-fw"></i>Reddit</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/stevemcgrath" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/stevemcgrath" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/stevemcgrath" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; Steve McGrath 2018</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Setting up PocketCHIP</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>16 Jul 16 17:58</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/chip">chip</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/pocketchip">pocketchip</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/howto">howto</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup.  Basically I was looking for a web browser, SSH installed, and a few aliases to make things easy to work with.</p>
+
+<blockquote>
+<p><strong><em>NOTE:</em></strong> All of the operations below assume a basic understanding of terminal commands!</p>
+</blockquote>
+
+<h3 id="updating-the-pocketchip-and-installing-the-software">Updating the PocketCHIP and installing the software</h3>
+
+<p>To start off, the PocketCHIP OS is slightly out of date as it&rsquo;s currently being flashed, so the first thing we need to do is update the OS to current:</p>
+
+<pre><code class="language-bash">sudo apt-get update
+</code></pre>
+
+<p>Now lets go ahead and install the needed packages (Note: &ldquo;\&rdquo; and lines are used here for page cleanliness).</p>
+
+<pre><code class="language-bash">sudo apt-get install openssh-client \
+                     openssh-server \
+                     irssi \
+                     dnsutils \
+                     moc \
+                     dwb
+</code></pre>
+
+<p>Next we will disable SSH from starting automatically:</p>
+
+<pre><code class="language-bash">sudo systemctl disable ssh
+</code></pre>
+
+<p>So now technically all of the software was installed (that was easy), but now we want to make the needed configuration changes to make everything behave how we expect it to.  I&rsquo;d recommend actually doing everything from hear-on out through SSH, as you&rsquo;ll have the benefit of a full-size keyboard.</p>
+
+<h3 id="setting-up-the-shell-environment">Setting up the Shell Environment</h3>
+
+<p>with the small keyboard, it makes a lot of sense to build-in some aliases to commonly-used commands.  This will save a lot of keystrokes overall and can only improve the overall experience.  I prefer to shim into the user profile in a manner that means that I&rsquo;m not constantly editing the default user profiles, as there is plenty in there that you simply don&rsquo;t want to touch.  To do this, we will do the following:</p>
+
+<p><strong>Step 1:</strong> create the profile scripts directory.  This directory will house our custom additions to the shell environment and allows us to more easily extend the shell in a safer manner.</p>
+
+<pre><code class="language-bash">mkdir -p ~/.profile_scripts
+</code></pre>
+
+<p><strong>Step 2:</strong> using either <code>vi</code> or <code>nano</code>, we will need to append the following to the end of the <code>~/.bashrc</code> file:</p>
+
+<pre><code class="language-bash"># This is a shim to allow for multiple profile script to exist in the
+# user home.  All of the shell scripts in ~/.profile_scripts will be
+# loaded into the user environment.                                    
+for SCRIPT_NAME in $(ls $HOME/.profile_scripts/*.sh);do
+    source $SCRIPT_NAME                                                
+done                                                                     
+unset SCRIPT_NAME
+</code></pre>
+
+<p><strong>Step 3:</strong> Now that the user&rsquo;s profile is set to load anything with a .sh extension into the profile, lets create an aliases file and input the aliases that we want to use.  Using either <code>vi</code> or <code>nano</code>, create a new file at <code>~/.profile_scripts/aliases.sh</code> and input the following into the file (and feel free to modify as you see fit):</p>
+
+<pre><code class="language-bash"># Enable the SSH Daemon
+alias sshon=&quot;sudo systemctl start ssh&quot;
+
+# Disable the SSH Daemon
+alias sshoff=&quot;sudo systemctl stop ssh&quot;
+
+# Get all associated IP Addresses
+alias getip=\&quot;ip addr | awk '/inet/ {print $2}'\&quot;&quot;
+
+# List all files in long format
+alias ll=&quot;ls -al&quot;
+
+# A shortcut to grep the running processes
+alias pgr=&quot;ps -ef | grep&quot;
+
+# Install a package
+alias sagi=&quot;sudo apt-get install&quot;
+
+# Update the repository cache
+alias sagu=&quot;sudo apt-get update&quot;
+
+# Upgrade the current packages installed
+alias sagU=&quot;sudo apt-get upgrade&quot;
+
+# Search for a package
+alias sags=&quot;apt-cache search&quot;
+</code></pre>
+
+<p><strong>Step 4</strong>: Now to get these changes to apply to the current shell, you simply need to <code>source ~/.bashrc</code> and it will reload the shell environment based on these new settings.</p>
+
+<h3 id="adding-the-browser-to-to-the-home-screen">Adding the Browser to to the Home screen</h3>
+
+<p>Next we will want to add the browser to the home screen so that it is easily accessible for general use.  As the PocketCHIP home screen only supports 6 icons, we will need to replace the help documentation with the browser.  To do so we will need to modify the definitions file for pocket-home to point to the browser.  Using <code>vi</code> or <code>nano</code>, open <code>/usr/share/pocket-home/config.json</code> and look for the help icon and change this definition to look like below instead:</p>
+
+<pre><code class="language-json">         {
+          &quot;name&quot;: &quot;Web Browser&quot;,
+          &quot;icon&quot;: &quot;appIcons/webbrowser.png&quot;,
+          &quot;shell&quot;: &quot;BROWSER_EXEC&quot;
+        },
+</code></pre>
+
+<p>Once you have saved the change, we will need to bounce the pocket-home GUI by typing <code>sudo skill pocket-home</code>.  If you have made an error in the configuration, you will not see the GUI come back up and just see the PocketCHIP logo on the screen (it may take a minute or so for the GUI to show up).  If this is the case, don&rsquo;t fret, just re-edit the file and and bounce the application again.  This is why we are making these changes over SSH, eight ;).</p>
+
+<h3 id="configuring-the-browser">Configuring the Browser</h3>
+
+<p>DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimick a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the <code>dwb</code> command) so that it will write it&rsquo;s initial configuration file and then <code>CNTRL+X</code> to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:</p>
+
+<pre><code class="language-ini">default-height=272
+default-width=420
+user-agent=Mozilla/5.0 (Linux; U; Android 4.0.3; en-us) AppleWebKit/999+ (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30
+</code></pre>
+
+<p>As DWB is keyboard-heavy for navigation, you may want to look at the <a href="http://portix.bitbucket.org/dwb/resources/manpage.html57">DWB Manual</a> in order to get a good understanding of what to do.  I personally fine the simple cheat-sheet below enough to get by for most uses:</p>
+
+<ul>
+<li>CNTRL+Q - Quit</li>
+<li>o - Enter URL (Open)</li>
+<li>h - Go back</li>
+<li>l - Go forward</li>
+<li>Scrolling = Arrow keys</li>
+</ul>
+
+<h3 id="finishing-up">Finishing up&hellip;</h3>
+
+<p>Now with these changes in place, go ahead and attempt to launch the browser from the home screen.  If all is well, the browser should come up and everything should look good.  A good test is to goto slashdot.org or google.com and see if the page is rendering as we should expect (no scrolling, mobile site, etc).  If everything looks good, then your done!</p>
+
+<h3 id="errata">Errata</h3>
+
+<p>I have also built a script to automate all of the actions mentioned in the above post, please see the <a href="https://bbs.nextthing.co/t/pocketchip-browser-installer-script/4832">PocketCHIP Browser Installer Script</a> post for information on how to use it.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://stevemcgrath.io/post/2016-06-14-dofler-at-circlecitycon3/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2016-06-14-dofler-at-circlecitycon3/">Dofler at CircleCityCon3</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://stevemcgrath.io/post/2016-10-10-trafficwatch/">TrafficWatch</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://stevemcgrath.io/post/2016-10-10-trafficwatch/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://stevemcgrath.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79231696-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+

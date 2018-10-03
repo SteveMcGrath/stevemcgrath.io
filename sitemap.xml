@@ -3,48 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://stevemcgrath.io/2017/07/nessus-network-monitor-docker-image/</loc>
+    <loc>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</loc>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/</loc>
     <lastmod>2017-07-18T12:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2017/07/nessus-scanner-docker-image/</loc>
+    <loc>http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/</loc>
     <lastmod>2017-07-18T08:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2017/07/docker-containers--network-sniffing/</loc>
+    <loc>http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/</loc>
     <lastmod>2017-07-14T17:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2016/10/trafficwatch/</loc>
+    <loc>http://stevemcgrath.io/post/2016-10-10-trafficwatch/</loc>
     <lastmod>2016-10-10T19:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2016/07/setting-up-pocketchip/</loc>
+    <loc>http://stevemcgrath.io/post/2016-07-16-setting-up-pocketchip/</loc>
     <lastmod>2016-07-16T17:58:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2016/06/dofler-at-circlecitycon3/</loc>
+    <loc>http://stevemcgrath.io/post/2016-06-14-dofler-at-circlecitycon3/</loc>
     <lastmod>2016-06-14T10:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2016/01/initial-deployment-files-release/</loc>
+    <loc>http://stevemcgrath.io/post/2016-01-13-initial-deployment-files-release/</loc>
     <lastmod>2016-01-13T10:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2015/07/cugnet-vps-services-closing/</loc>
+    <loc>http://stevemcgrath.io/post/2015-07-15-cugnet-vps-services-closing/</loc>
     <lastmod>2015-07-15T12:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/2015/07/pysecuritycenter-2.1-release/</loc>
+    <loc>http://stevemcgrath.io/post/2015-07-15-pysecuritycenter-2-1-release/</loc>
     <lastmod>2015-07-15T00:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/about/</loc>
   </url>
   
   <url>
@@ -56,6 +65,12 @@
   <url>
     <loc>http://stevemcgrath.io/tags/conferences/</loc>
     <lastmod>2016-06-14T10:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/container_security/</loc>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,14 +135,20 @@
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/posts/</loc>
-    <lastmod>2017-07-18T12:26:00+00:00</lastmod>
+    <loc>http://stevemcgrath.io/post/</loc>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://stevemcgrath.io/tags/python/</loc>
-    <lastmod>2016-01-13T10:02:00+00:00</lastmod>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/security_center/</loc>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -139,7 +160,7 @@
   
   <url>
     <loc>http://stevemcgrath.io/</loc>
-    <lastmod>2017-07-18T12:26:00+00:00</lastmod>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -151,7 +172,18 @@
   
   <url>
     <loc>http://stevemcgrath.io/tags/tenable/</loc>
-    <lastmod>2015-07-15T00:21:00+00:00</lastmod>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable.io/</loc>
+    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/topics/</loc>
     <priority>0</priority>
   </url>
   

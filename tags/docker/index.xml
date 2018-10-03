@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on SteveMcGrath.io</title>
+    <title>Docker on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/docker/</link>
-    <description>Recent content in Docker on SteveMcGrath.io</description>
+    <description>Recent content in Docker on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
+    <copyright>&amp;copy; Steve McGrath 2018</copyright>
     <lastBuildDate>Tue, 18 Jul 2017 12:26:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
@@ -14,28 +14,28 @@
     
     <item>
       <title>Nessus Network Monitor Docker Image</title>
-      <link>http://stevemcgrath.io/2017/07/nessus-network-monitor-docker-image/</link>
+      <link>http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/</link>
       <pubDate>Tue, 18 Jul 2017 12:26:00 +0000</pubDate>
       
-      <guid>http://stevemcgrath.io/2017/07/nessus-network-monitor-docker-image/</guid>
+      <guid>http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/</guid>
       <description>Considering there wasn&amp;rsquo;t any Nessus Network Monitor docker images that I could find, I decided I&amp;rsquo;d create one. Using the Nessus Scanner image as a starting point, this image should have a lot of the most common things parameterized out already. As for sniffing traffic, I&amp;rsquo;d highly encourage you to take a look at one of the earlier posts covering Docker &amp;amp; packet sniffing. Deploying the sensor should be a simple matter of setting up a volume for the sensor data (for persistence), linking it to a promiscuous interface, and then instantiating it:</description>
     </item>
     
     <item>
       <title>Nessus Scanner Docker Image</title>
-      <link>http://stevemcgrath.io/2017/07/nessus-scanner-docker-image/</link>
+      <link>http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/</link>
       <pubDate>Tue, 18 Jul 2017 08:10:00 +0000</pubDate>
       
-      <guid>http://stevemcgrath.io/2017/07/nessus-scanner-docker-image/</guid>
+      <guid>http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/</guid>
       <description>A lot of the Nessus Scanner docker images in Docker Hub don&amp;rsquo;t appear to be properly parameterizing a lot (or in many cases, any) of the required inputs to really get the scanner to run and connect up in an automated fashion. Further most of the images that I&amp;rsquo;ve seen out there aren&amp;rsquo;t cleaning up the identifying information the scanner created as part of install (such as the UUID, the master encryption key, etc.</description>
     </item>
     
     <item>
       <title>Docker Containers &amp; Network Sniffing</title>
-      <link>http://stevemcgrath.io/2017/07/docker-containers--network-sniffing/</link>
+      <link>http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/</link>
       <pubDate>Fri, 14 Jul 2017 17:15:00 +0000</pubDate>
       
-      <guid>http://stevemcgrath.io/2017/07/docker-containers--network-sniffing/</guid>
+      <guid>http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/</guid>
       <description>With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find. I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&amp;rsquo;s host networking (which means that these containers can&amp;rsquo;t exist in other network name-spaces), use pass-through networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.</description>
     </item>
     

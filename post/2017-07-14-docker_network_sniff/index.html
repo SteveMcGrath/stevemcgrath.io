@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.47.1" />
+
+  <title>Docker Containers &amp; Network Sniffing &middot; Steve McGrath</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://stevemcgrath.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://stevemcgrath.io/">SteveMcGrath</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/stevemcgrath" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/chigeek" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/chigeek" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://reddit.com/user/stevemcgrath" target="_blank"><i class="fa fa-reddit-square fa-fw"></i>Reddit</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/stevemcgrath" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/stevemcgrath" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/stevemcgrath" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; Steve McGrath 2018</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Docker Containers &amp; Network Sniffing</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jul 17 17:15</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/docker">docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find.  I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&rsquo;s host networking (which means that these containers can&rsquo;t exist in other network name-spaces), use pass-through networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.  I figured there had to be a more elegant solution, and after quite some time of on-and-off looking around for different solutions I had the sudden realization that I was approaching the problem from the wrong angle.  Instead of trying to get docker to bend to my use case, I needed to focus on the network bridging itself.  Now with a new focus, finding the solution only took an hour or two, ended up being extremely elegant, and is very survivable.  Further, as I don&rsquo;t need any weird hackery, none of the containers sniffing the network need privileged access, so no need to worry about special needs containers.</p>
+
+<p>As a basis for what I&rsquo;m doing here, I have an Ubuntu 16.04 host running Docker CE and it has a couple of network interfaces:</p>
+
+<ul>
+<li><strong>ens160</strong> - Server VLAN traffic</li>
+<li><strong>ens192</strong> - Mirrored traffic from the Cisco switch</li>
+</ul>
+
+<p>The first step in this little adventure is to download the <a href="https://github.com/SteveMcGrath/mirror_tools">mirroring script</a> and install it onto the host.  While the method below is quick &amp; dirty, remember to always validate what your downloading to your systems.</p>
+
+<pre><code class="language-bash">wget -O /usr/bin/tc-mirror https://raw.githubusercontent.com/SteveMcGrath/mirror_tools/master/tc-mirror.sh
+chmod 755 /usr/bin/tc-mirror
+</code></pre>
+
+<p>Now the goal here is to push the mirrored traffic from ens192 into a docker network.  To start, we will want to create a bridge on the host which I will call <em>span0</em>.  The <em>/etc/network/interfaces</em> configuration for this bridge looks like so:</p>
+
+<pre><code>auto span0
+iface span0 inet manual
+        bridge_stp off
+        bridge_fd 0
+        bridge_maxwait 0
+        bridge_ageing 0
+        post-up /usr/bin/tc-mirror build ens192 span0
+        pre-down /usr/sbin/tc-mirror teardown ens192
+</code></pre>
+
+<p>I want to point out something here, specifically the <strong>bridge_ageing 0</strong> line.  This single parameter is telling the Linux kernel to disable <em>MAC address learning</em> capability that normally comes built-in on every linux bridge.  Without this capability turned on, we have effectively disabled the MAC learning table, which is the heart of the switching capability within the bridge.  The bridge itself is now effectively a simple packet forwarder to all of the interfaces attached to the bridge, which is what we want in this case.  Now to restart the networking on the Ubuntu host to inform it to bring up the new interface (and to auto-build the bridge at boot from now on)</p>
+
+<pre><code class="language-bash">systemctl restart networking
+</code></pre>
+
+<p>Everything is all plumbed up now!  The next step is to create the docker network and tell docker to use the existing bridge that we have already created instead of building a new one.  We also want to make sure that we inform docker this this is not a network we want to route with, so we mark it as &ldquo;internal&rdquo; only.</p>
+
+<pre><code class="language-bash">docker network create -d bridge --internal -o com.docker.network.bridge.name=span0 span
+</code></pre>
+
+<p>Now if we want to test this, we can build a really simple ubuntu docker container and install tcpdump within it:</p>
+
+<pre><code class="language-bash">docker run -it --rm --name=spantest ubuntu:16.04 /bin/bash
+</code></pre>
+
+<p>Once the container drops you into a shell:</p>
+
+<pre><code class="language-bash">apt update &amp;&amp; apt -y install tcpdump
+</code></pre>
+
+<p>Now that tcpdump is installed, lets go ahead and add the span network to the container in another window:</p>
+
+<pre><code class="language-bash">docker network connect span spantest
+</code></pre>
+
+<p>Lets go ahead and start tcpdump!</p>
+
+<pre><code class="language-bash">tcpdump -i eth1
+</code></pre>
+
+<p>If all went well, you should now see all of the mirrored traffic on the container.  No elevated privileges or hackery, just a regular old container.  Secondly this allows for multiple containers to be attached to the same single mirror, allowing for multiple tools to get the same data (which is a requirement in my case for Dofler).</p>
+
+<p>It really is that simple &amp; elegant.  I can only imagine the doors this opens up for folks, especially in the network security community with things such as snort, suricata, bro, and even Tenable&rsquo;s own Nessus Network Monitor.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://stevemcgrath.io/post/2016-10-10-trafficwatch/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2016-10-10-trafficwatch/">TrafficWatch</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/">Nessus Scanner Docker Image</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://stevemcgrath.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79231696-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+

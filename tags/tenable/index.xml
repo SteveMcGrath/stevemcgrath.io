@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tenable on SteveMcGrath.io</title>
+    <title>Tenable on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/tenable/</link>
-    <description>Recent content in Tenable on SteveMcGrath.io</description>
+    <description>Recent content in Tenable on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/stevemcgrath&#34;&gt;Steve McGrath&lt;/a&gt; 2017</copyright>
-    <lastBuildDate>Wed, 15 Jul 2015 00:21:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <lastBuildDate>Wed, 03 Oct 2018 09:12:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/tenable/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>pyTenable v0.1.0 Released</title>
+      <link>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</link>
+      <pubDate>Wed, 03 Oct 2018 09:12:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</guid>
+      <description>After nearly 8 months of on-and-off development (mostly off, day-job work keeps my busy), I&amp;rsquo;m proud to announce that pyTenable has hit version 0.1.0. While this may not seem like much, it&amp;rsquo;s been a lot of work to bring it across this line in the journey so far. All of the Tenable.io Vulnerability Management API are now pythonized. Further everything in the tenable_io module has been tested out (519 tests!). Tenable has also seen fit to link to pyTenable as an official module for working with our products.</description>
+    </item>
+    
+    <item>
       <title>pySecurityCenter 2.1 Release</title>
-      <link>http://stevemcgrath.io/2015/07/pysecuritycenter-2.1-release/</link>
+      <link>http://stevemcgrath.io/post/2015-07-15-pysecuritycenter-2-1-release/</link>
       <pubDate>Wed, 15 Jul 2015 00:21:00 +0000</pubDate>
       
-      <guid>http://stevemcgrath.io/2015/07/pysecuritycenter-2.1-release/</guid>
+      <guid>http://stevemcgrath.io/post/2015-07-15-pysecuritycenter-2-1-release/</guid>
       <description>I&amp;rsquo;m proud to announce the general availability for pySecurityCenter version 2.1.x accessible from PyPI immediately. pySC 2.1 supports connectivity to SecurityCenter 5, which leverages a completely new RESTful API. Because of this, the pySC SecurityCenter 5 support will be an evolving process. Whats implemented today will not be changing, however many of the convenience functions that pySecurityCenter has for SecurityCenter 4.x have not been coded into the SC5 module, as enumeration for the API is still active.</description>
     </item>
     
