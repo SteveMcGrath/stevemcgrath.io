@@ -21,5 +21,14 @@
       <description>The pyTenable library has been rapidly evolving over the past few months. The library has seen a lot of expansion and maturation over the last several weeks. Going from version 0.1.0 at the time of last post to now 0.3.3, there has been a lot of work done to lay scaffolding for the SecurityCenter package. SecurityCenter (recently re-branded as Tenable.sc) is as large, if not larger a project as Tenable.io was.</description>
     </item>
     
+    <item>
+      <title>pyTenable v0.1.0 Released</title>
+      <link>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</link>
+      <pubDate>Wed, 03 Oct 2018 09:12:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</guid>
+      <description>After nearly 8 months of on-and-off development (mostly off, day-job work keeps my busy), I&amp;rsquo;m proud to announce that pyTenable has hit version 0.1.0. While this may not seem like much, it&amp;rsquo;s been a lot of work to bring it across this line in the journey so far. All of the Tenable.io Vulnerability Management API are now pythonized. Further everything in the tenable_io module has been tested out (519 tests!). Tenable has also seen fit to link to pyTenable as an official module for working with our products.</description>
+    </item>
+    
   </channel>
 </rss>
