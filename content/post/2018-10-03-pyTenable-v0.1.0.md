@@ -1,6 +1,6 @@
 +++
 title = "pyTenable v0.1.0 Released"
-tags = ["python", "tenable", "tenable.io", "container_security", "security_center"]
+tags = ["python", "tenable", "tenable.io", "container_security", "security_center", "pytenable"]
 date = "2018-10-03 09:12:00"
 +++
 
