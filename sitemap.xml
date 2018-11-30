@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/</loc>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/</loc>
     <lastmod>2018-10-03T09:12:00+00:00</lastmod>
   </url>
@@ -70,7 +75,7 @@
   
   <url>
     <loc>http://stevemcgrath.io/tags/container_security/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -136,19 +141,31 @@
   
   <url>
     <loc>http://stevemcgrath.io/post/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/pysecuritycenter/</loc>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/pytenable/</loc>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://stevemcgrath.io/tags/python/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://stevemcgrath.io/tags/security_center/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -160,7 +177,7 @@
   
   <url>
     <loc>http://stevemcgrath.io/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -172,13 +189,19 @@
   
   <url>
     <loc>http://stevemcgrath.io/tags/tenable/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://stevemcgrath.io/tags/tenable.io/</loc>
-    <lastmod>2018-10-03T09:12:00+00:00</lastmod>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable.sc/</loc>
+    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
