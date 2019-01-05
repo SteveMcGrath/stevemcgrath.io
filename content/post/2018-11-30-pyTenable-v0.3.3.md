@@ -17,7 +17,7 @@ With everything there said, there have already been leaps and bounds in terms of
 
 Some minor changes to the Tenable.io package is as follows:
 
-* The `workbenches.assets_with_vulns` method has been renamed to `workbenches.vuln_assets` and hes been reworked to properly handle validation of the **vulnerability** filters instead of the **asset** filters.
+* The `workbenches.assets_with_vulns` method has been renamed to `workbenches.vuln_assets` and has been reworked to properly handle validation of the **vulnerability** filters instead of the **asset** filters.
 * The `scanners.linking_key` property has been reworked into a method, which is more logical as it communicates to the API.
 * The `tenable.io` package as a whole now has a battery of 530+ unit tests, covering almost all inputs and outputs.  A couple of small gaps still remain, and will be closed up before 1.0.
 

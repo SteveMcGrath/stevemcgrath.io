@@ -4,7 +4,7 @@ tags = ["nodejs", "google maps"]
 date = "2016-10-10 19:26:00"
 +++
 
-TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon's [traffic time-lapse-helper](https://github.com/ianharmon/traffic-time-lapse-helper) project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour.  There are some arguments that you can specity as well if you want look at somethign other than Chicago traffic:
+TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon's [traffic time-lapse-helper](https://github.com/ianharmon/traffic-time-lapse-helper) project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour.  There are some arguments that you can specify as well if you want look at something other than Chicago traffic:
 
 * **--name / -n** Name for the GIF in the upper-left corner
 * **--url / -u** URL String for that we will be time-lapsing

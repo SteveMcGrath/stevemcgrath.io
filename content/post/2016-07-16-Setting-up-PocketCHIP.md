@@ -105,7 +105,7 @@ Once you have saved the change, we will need to bounce the pocket-home GUI by ty
 
 ### Configuring the Browser
 
-DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimick a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the `dwb` command) so that it will write it's initial configuration file and then `CNTRL+X` to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:
+DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimic a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the `dwb` command) so that it will write it's initial configuration file and then `CNTRL+X` to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:
 
 ```ini
 default-height=272
