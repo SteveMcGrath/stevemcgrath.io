@@ -12,7 +12,7 @@ With that, I present to you **Twilight Operator** version 0.0.1.
 
 ![](https://raw.githubusercontent.com/SteveMcGrath/twilight-operator/master/static/screenshot-python.png)
 
-There have been only a few minor changes in terms of the colorization (namely that I like my doc-strings in the same color as my comments).  Other than that, most of the changes are focused around adding italics to things like class names, function names, keywords, etc.  The only real code changes so far post-conversion are [within a couple dozen lines of JSON][code].  It is published to the [Visual Studio Marketplace][marketplace] however, so feel free to pull it down and open a [Issue][issue] on Github if you have any suggestions for improvements.
+There have been only a few minor changes in terms of the colorization (namely that I like my doc-strings in the same color as my comments).  Other than that, most of the changes are focused around adding italics to things like class names, function names, keywords, etc.  The only real code changes so far post-conversion are [within a couple dozen lines of JSON][code].  It is published to the [Visual Studio Marketplace][marketplace] however, so feel free to pull it down and open a [Issue][issues] on Github if you have any suggestions for improvements.
 
 ### Update
 
