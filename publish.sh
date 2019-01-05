@@ -12,6 +12,7 @@ rm -rf public
 mkdir public
 git worktree prune
 rm -rf .git/worktrees/public/
+git branch -D gh-pages
 
 echo "Checking out gh-pages branch into public"
 git worktree add -fB gh-pages public origin/gh-pages
@@ -25,4 +26,4 @@ hugo
 echo "Updating gh-pages branch"
 cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
 echo "Pushing the changes..."
-cd ${DIR} && git branch -D gh-pages
+git push
