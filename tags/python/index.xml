@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Steve McGrath 2018</copyright>
-    <lastBuildDate>Fri, 30 Nov 2018 14:03:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 23:45:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VSCode Twilight Operator Theme</title>
+      <link>http://stevemcgrath.io/post/2019-01-04-twilight-operator/</link>
+      <pubDate>Fri, 04 Jan 2019 23:45:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2019-01-04-twilight-operator/</guid>
+      <description>So I decided to start looking at Visual Studio Code with most of the folks I know dropping Sublime like it&amp;rsquo;s a bad habit and see what all of the hubbub is about. I will have to say that after some tweaking I&amp;rsquo;ve been pleasantly surprised with how well VSCode works. It&amp;rsquo;s taken a lot less tweaking to get it to a point where I&amp;rsquo;m happy with it than it ever did with Sublime Text, and it even has some really nice features out of the box for Python.</description>
+    </item>
     
     <item>
       <title>pyTenable v0.3.3 Released</title>

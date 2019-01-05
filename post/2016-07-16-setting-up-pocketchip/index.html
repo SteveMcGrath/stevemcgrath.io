@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.47.1" />
+  <meta name="generator" content="Hugo 0.53" />
 
   <title>Setting up PocketCHIP &middot; Steve McGrath</title>
 
@@ -369,7 +369,7 @@ alias sags=&quot;apt-cache search&quot;
 
 <h3 id="configuring-the-browser">Configuring the Browser</h3>
 
-<p>DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimick a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the <code>dwb</code> command) so that it will write it&rsquo;s initial configuration file and then <code>CNTRL+X</code> to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:</p>
+<p>DWB is a really decent webkit-based browser (same engine thats in chrome), however we need to make some minor configuration changes to the browser to support the low resolution of the PocketCHIP and to mimic a mobile device so that we load less resource intensive pages.  To do this we much first start DWB from the PocketCHIP (using the <code>dwb</code> command) so that it will write it&rsquo;s initial configuration file and then <code>CNTRL+X</code> to exit it.  Once thats done, we will open the configuration file from the SSH console and make the appropriate changes.  For brevity, I have listed the relevant changes that you will need to make in the file, simply look for each line below and modify as appropriate:</p>
 
 <pre><code class="language-ini">default-height=272
 default-width=420

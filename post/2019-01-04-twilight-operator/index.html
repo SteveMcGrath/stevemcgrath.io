@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.53" />
 
-  <title>TrafficWatch &middot; Steve McGrath</title>
+  <title>VSCode Twilight Operator Theme &middot; Steve McGrath</title>
 
   
   
@@ -234,7 +234,7 @@
 
 
 <div class="header">
-  <h1>TrafficWatch</h1>
+  <h1>VSCode Twilight Operator Theme</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -243,7 +243,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>10 Oct 16 19:26</time>
+    <time>04 Jan 19 23:45</time>
   </div>
 
   
@@ -256,9 +256,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/nodejs">nodejs</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/google-maps">google maps</a>
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/vs-code">vs-code</a>
     
   </div>
   
@@ -266,39 +266,28 @@
 
 </div>
 
-  <p>TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon&rsquo;s <a href="https://github.com/ianharmon/traffic-time-lapse-helper">traffic time-lapse-helper</a> project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour.  There are some arguments that you can specify as well if you want look at something other than Chicago traffic:</p>
+  <p>So I decided to start looking at Visual Studio Code with most of the folks I know dropping Sublime like it&rsquo;s a bad habit and see what all of the hubbub is about.  I will have to say that after some tweaking I&rsquo;ve been pleasantly surprised with how well VSCode works.  It&rsquo;s taken a lot less tweaking to get it to a point where I&rsquo;m happy with it than it ever did with Sublime Text, and it even has some really nice features out of the box for Python.</p>
 
-<ul>
-<li><strong>&ndash;name / -n</strong> Name for the GIF in the upper-left corner</li>
-<li><strong>&ndash;url / -u</strong> URL String for that we will be time-lapsing</li>
-<li><strong>&ndash;interval / -i</strong> The time interval (in minutes)</li>
-<li><strong>&ndash;duration / -d</strong> The number of minutes to run</li>
-<li><strong>&ndash;gifout / -g</strong> The output filename for the GIF</li>
-<li><strong>&ndash;xoffset</strong> X Offset for the crop (0 means centered)</li>
-<li><strong>&ndash;yoffset</strong> Y Offset for the crop (0 means centered)</li>
-<li><strong>&ndash;font</strong> Font for the name and time display in the upper-left corner (default is Arial)</li>
-<li><strong>&ndash;fontsize</strong> Size of the text (default is 32)</li>
-<li><strong>&ndash;fontcolor</strong> Color of the text (default is #000000b0)</li>
-<li><strong>&ndash;directory</strong> Path for the individual screencaps (default is screenshots)</li>
-<li><strong>&ndash;gifdelay</strong> The ms delay timer for the GIF animation (default 500)</li>
-</ul>
+<p>About the only thing that I wasn&rsquo;t overly happy about was the lack of Operator-aware themes that were available for VSCode.  My solution to this was to take one of my favorite dark themes that I have been using since TextMate 1, convert it to the VSCode format, and then make the minor changes needed to make it leverage some of the capabilities that Operator (or in my case Dank) uses to make your life an easy one.</p>
 
-<p>An example output would look something like this:</p>
+<p>With that, I present to you <strong>Twilight Operator</strong> version 0.0.1.</p>
 
-<p><img src="http://stevemcgrath.io/images/chicago-traffic-example.gif" alt="example-gif" /></p>
+<p><img src="https://raw.githubusercontent.com/SteveMcGrath/twilight-operator/master/static/screenshot-python.png" alt="" /></p>
+
+<p>There have been only a few minor changes in terms of the colorization (namely that I like my doc-strings in the same color as my comments).  Other than that, most of the changes are focused around adding italics to things like class names, function names, keywords, etc.  The only real code changes so far post-conversion are <a href="https://github.com/SteveMcGrath/twilight-operator/blob/master/themes/Twilight%20Operator-color-theme.json#L348-L378">within a couple dozen lines of JSON</a>.  It is published to the <a href="https://marketplace.visualstudio.com/items?itemName=stevemcgrath.twilight-operator">Visual Studio Marketplace</a> however, so feel free to pull it down and open a [Issue][issue] on Github if you have any suggestions for improvements.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="http://stevemcgrath.io/post/2016-07-16-setting-up-pocketchip/"><i class="fa fa-chevron-left"></i></a>
+    <a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="http://stevemcgrath.io/post/2016-07-16-setting-up-pocketchip/">Setting up PocketCHIP</a>
+      <a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/">pyTenable v0.3.3 Released</a>
     </nav>
     
   </div>
@@ -307,14 +296,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/">Docker Containers &amp; Network Sniffing</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
