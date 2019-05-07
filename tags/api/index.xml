@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on Steve McGrath</title>
+    <link>http://stevemcgrath.io/tags/api/</link>
+    <description>Recent content in Api on Steve McGrath</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <lastBuildDate>Tue, 07 May 2019 14:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://stevemcgrath.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RESTfly API Library</title>
+      <link>http://stevemcgrath.io/post/2019-05-07-restfly-announcement/</link>
+      <pubDate>Tue, 07 May 2019 14:45:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2019-05-07-restfly-announcement/</guid>
+      <description>With all of the work thats been done with the pyTenable library, I reached a point where I was using pyTenable&amp;rsquo;s core APISession, APIEndpoint, and APIIterator classes a lot for external work. It seemed only logical to separate these base classes from pyTenable and wrap them up into their own library to act as a framework for folks looking to build their own API libraries. The end result of this is the new Python RESTfly library, which is focused on providing a basic scaffolding to make writing API libraries similar to pyTenable&amp;rsquo;s easy and and effective.</description>
+    </item>
+    
+  </channel>
+</rss>

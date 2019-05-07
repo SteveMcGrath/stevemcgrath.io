@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.53" />
 
-  <title>VSCode Twilight Operator Theme &middot; Steve McGrath</title>
+  <title>RESTfly API Library &middot; Steve McGrath</title>
 
   
   
@@ -234,7 +234,7 @@
 
 
 <div class="header">
-  <h1>VSCode Twilight Operator Theme</h1>
+  <h1>RESTfly API Library</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -243,7 +243,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Jan 19 23:45</time>
+    <time>07 May 19 14:45</time>
   </div>
 
   
@@ -258,7 +258,7 @@
     
       <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/vs-code">vs-code</a>
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>
     
   </div>
   
@@ -266,36 +266,79 @@
 
 </div>
 
-  
+  <p>With all of the work thats been done with the <a href="https://pytenable.readthedocs.io">pyTenable</a> library, I reached a
+point where I was using <a href="https://pytenable.readthedocs.io">pyTenable</a>&rsquo;s core <code>APISession</code>, <code>APIEndpoint</code>, and
+<code>APIIterator</code> classes a lot for external work.  It seemed only logical to
+separate these base classes from pyTenable and wrap them up into their own
+library to act as a framework for folks looking to build their own API
+libraries.  The end result of this is the new Python <a href="https://restfly.readthedocs.io">RESTfly</a> library, which is
+focused on providing a basic scaffolding to make writing API libraries similar
+to <a href="https://pytenable.readthedocs.io">pyTenable</a>&rsquo;s easy and and effective.</p>
 
-<p>So I decided to start looking at Visual Studio Code with most of the folks I know dropping Sublime like it&rsquo;s a bad habit and see what all of the hubbub is about.  I will have to say that after some tweaking I&rsquo;ve been pleasantly surprised with how well VSCode works.  It&rsquo;s taken a lot less tweaking to get it to a point where I&rsquo;m happy with it than it ever did with Sublime Text, and it even has some really nice features out of the box for Python.</p>
+<p>I ended up taking a lot of the code as-is when moving it over, however I did
+find several areas to improve upon the basic premise as well.  Some examples of
+these improvements are listed below:</p>
 
-<p>About the only thing that I wasn&rsquo;t overly happy about was the lack of Operator-aware themes that were available for VSCode.  My solution to this was to take one of my favorite dark themes that I have been using since TextMate 1, convert it to the VSCode format, and then make the minor changes needed to make it leverage some of the capabilities that Operator (or in my case Dank) uses to make your life an easy one.</p>
+<ul>
+<li><p><strong>Refactored <code>_check</code> Method</strong>: The check method used for validating inputs
+actually works really well as-is, however I didn&rsquo;t want to make assumptions
+on regex patterns that folks may want to use, so the new method supports
+overloading the built-in patterns and a new custom pattern dictionary to
+make extending it a bit easier.</p></li>
 
-<p>With that, I present to you <strong>Twilight Operator</strong> version 0.0.1.</p>
+<li><p><strong>Refactored <code>APIIterator</code></strong>: The APIIterator class leveraged a lot of private
+attributes for operation in pyTenable, over time I have been re-exposing
+those as public attributes and have been leveraging them more in various
+other code bits, so I just exposed them from the onset here.  Further you
+can now use the iterator a bit more like a list in RESTfly&rsquo;s variant, as you
+can call the index of the current page directly and even use the <code>get</code>
+method and define a default response of the index doesn&rsquo;t exist.</p></li>
 
-<p><img src="https://raw.githubusercontent.com/SteveMcGrath/twilight-operator/master/static/screenshot-python.png" alt="" /></p>
+<li><p><strong>Standard Exceptions based on HTTP Standards</strong>: I took the HTTP standard
+error codes definitions and wrapped those in exceptions&hellip;almost all of
+them.  The end result is that you&rsquo;ll get an exception thrown for a 4xx or
+5xx error that should match the expected type of error the API is throwing.
+Now I know that not all APIs play well here, and also allowed for this
+dictionary (which is stored in the <code>APISession</code>) to be overloaded if
+necessary.  This also means that with minimal effort, you could also wrap
+the exceptions with some additional logic (like how the APIErrors in
+<a href="https://pytenable.readthedocs.io">pyTenable</a> will attempt to pull the Request-UUID header).  This is all
+fairly easy to use and should all <em>just work</em>.</p></li>
 
-<p>There have been only a few minor changes in terms of the colorization (namely that I like my doc-strings in the same color as my comments).  Other than that, most of the changes are focused around adding italics to things like class names, function names, keywords, etc.  The only real code changes so far post-conversion are <a href="https://github.com/SteveMcGrath/twilight-operator/blob/master/themes/Twilight%20Operator-color-theme.json#L348-L378">within a couple dozen lines of JSON</a>.  It is published to the <a href="https://marketplace.visualstudio.com/items?itemName=stevemcgrath.twilight-operator">Visual Studio Marketplace</a> however, so feel free to pull it down and open a <a href="https://github.com/SteveMcGrath/twilight-operator/issues">Issue</a> on Github if you have any suggestions for improvements.</p>
+<li><p><strong>Improved Utilities</strong>: There are several utilities that I keep needing over
+and over again and honestly have gotten tired of constantly re-implementing
+them.  The <code>dict_merge</code> utility to merge two dictionaries together in a nice
+recursive way.  The <code>trunc</code> utility to allow for truncation of a string with
+an included suffix (if specified) and ensure the resulting length never
+exceeds the length I specify.  Generally basic stuff, but a chore to
+re-implement over and over.</p></li>
 
-<h3 id="update">Update</h3>
+<li><p><strong>Vastly improved documentation</strong>: While I have been generally quite happy
+with the documentation in <a href="https://pytenable.readthedocs.io">pyTenable</a>, the private functions never needed
+the same level of detail as they were only intended to be used by the guts
+of the library.  As I expect other folks to start using these various
+methods, functions, etc. I also spent some time really beefing up the
+doc-strings and the overall detail in the docs to bring it more in-line with
+my expectations for all public code.</p></li>
+</ul>
 
-<p>Well I figured I&rsquo;d also slap together a <a href="https://github.com/SteveMcGrath/twilight-iterm">iTerm color profile</a> that matches the VSCode Color Theme, so bonus ;)</p>
-
-<p><img src="https://raw.githubusercontent.com/SteveMcGrath/twilight-iterm/master/screenshot.png" alt="" /></p>
+<p>In the end, <a href="https://pytenable.readthedocs.io">pyTenable</a> will eventually be refactored to use <a href="https://restfly.readthedocs.io">RESTfly</a> instead
+of it&rsquo;s own base classes, as there isn&rsquo;t much of a reason to keep two
+independent versions of the same code.  I&rsquo;d expect that to be a further down the
+line problem however, as there is a lot more work to do with <a href="https://pytenable.readthedocs.io">pyTenable</a>.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/"><i class="fa fa-chevron-left"></i></a>
+    <a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/">pyTenable v0.3.3 Released</a>
+      <a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/">VSCode Twilight Operator Theme</a>
     </nav>
     
   </div>
@@ -304,14 +347,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/">RESTfly API Library</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
