@@ -7,8 +7,8 @@ language            = "en"
 timezone            = "US/Central"
 canonifyurls        = true
 paginate            = 10
-copyright           = "&copy; Steve McGrath 2018"
-keywords            = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable"]
+copyright           = "&copy; Steve McGrath 2019"
+keywords            = ["docker", "python", "security", "nodejs", "javascript", "nessus", "tenable", "tenable.io", "tenable.sc"]
 
 [indexes]
     tag = "tags"
