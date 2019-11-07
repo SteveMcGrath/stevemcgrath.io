@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>api on Steve McGrath</title>
-    <link>http://stevemcgrath.io/tags/api/</link>
-    <description>Recent content in api on Steve McGrath</description>
+    <title>rest on Steve McGrath</title>
+    <link>http://stevemcgrath.io/tags/rest/</link>
+    <description>Recent content in rest on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Thu, 07 Nov 2019 12:25:00 +0000</lastBuildDate>
     
-	<atom:link href="http://stevemcgrath.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stevemcgrath.io/tags/rest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/</guid>
       <description>The more integrations I write the more it becomes apparent that there is no consistency in User-Agent strings for the purposes of identification of whom is making what calls. It&amp;rsquo;s something that folks are supposed to do with making API calls, yet most folks don&amp;rsquo;t even bother with it. It creates nothing but issues when the people managing the application you&amp;rsquo;re talking to doesn&amp;rsquo;t inform the admins who you are or what you&amp;rsquo;re doing.</description>
-    </item>
-    
-    <item>
-      <title>RESTfly API Library</title>
-      <link>http://stevemcgrath.io/post/2019-05-07-restfly-announcement/</link>
-      <pubDate>Tue, 07 May 2019 14:45:00 +0000</pubDate>
-      
-      <guid>http://stevemcgrath.io/post/2019-05-07-restfly-announcement/</guid>
-      <description>With all of the work thats been done with the pyTenable library, I reached a point where I was using pyTenable&amp;rsquo;s core APISession, APIEndpoint, and APIIterator classes a lot for external work. It seemed only logical to separate these base classes from pyTenable and wrap them up into their own library to act as a framework for folks looking to build their own API libraries. The end result of this is the new Python RESTfly library, which is focused on providing a basic scaffolding to make writing API libraries similar to pyTenable&amp;rsquo;s easy and and effective.</description>
     </item>
     
   </channel>

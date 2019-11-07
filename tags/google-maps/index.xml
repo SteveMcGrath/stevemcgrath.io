@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google Maps on Steve McGrath</title>
+    <title>google maps on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/google-maps/</link>
-    <description>Recent content in Google Maps on Steve McGrath</description>
+    <description>Recent content in google maps on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Mon, 10 Oct 2016 19:26:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/google-maps/index.xml" rel="self" type="application/rss+xml" />

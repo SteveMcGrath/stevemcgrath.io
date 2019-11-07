@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.58.0" />
 
-  <title>RESTfly API Library &middot; Steve McGrath</title>
+  <title>rest &middot; Steve McGrath</title>
 
   
   
@@ -39,6 +39,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Steve McGrath" href="http://stevemcgrath.io/tags/rest/index.xml" />
   
 
   
@@ -111,6 +113,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://stevemcgrath.io/tags/rest/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -234,16 +240,20 @@
 
 
 <div class="header">
-  <h1>RESTfly API Library</h1>
-  <h2></h2>
+  <h1>rest</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Integration User-Agent String Standard Proposal</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>07 May 19 14:45</time>
+    <time>07 Nov 19 12:25</time>
   </div>
 
   
@@ -258,7 +268,9 @@
     
       <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/rest">rest</a>
     
   </div>
   
@@ -266,103 +278,20 @@
 
 </div>
 
-  <p>With all of the work thats been done with the <a href="https://pytenable.readthedocs.io">pyTenable</a> library, I reached a
-point where I was using <a href="https://pytenable.readthedocs.io">pyTenable</a>&rsquo;s core <code>APISession</code>, <code>APIEndpoint</code>, and
-<code>APIIterator</code> classes a lot for external work.  It seemed only logical to
-separate these base classes from pyTenable and wrap them up into their own
-library to act as a framework for folks looking to build their own API
-libraries.  The end result of this is the new Python <a href="https://restfly.readthedocs.io">RESTfly</a> library, which is
-focused on providing a basic scaffolding to make writing API libraries similar
-to <a href="https://pytenable.readthedocs.io">pyTenable</a>&rsquo;s easy and and effective.</p>
+  </header>
 
-<p>I ended up taking a lot of the code as-is when moving it over, however I did
-find several areas to improve upon the basic premise as well.  Some examples of
-these improvements are listed below:</p>
-
-<ul>
-<li><p><strong>Refactored <code>_check</code> Method</strong>: The check method used for validating inputs
-actually works really well as-is, however I didn&rsquo;t want to make assumptions
-on regex patterns that folks may want to use, so the new method supports
-overloading the built-in patterns and a new custom pattern dictionary to
-make extending it a bit easier.</p></li>
-
-<li><p><strong>Refactored <code>APIIterator</code></strong>: The APIIterator class leveraged a lot of private
-attributes for operation in pyTenable, over time I have been re-exposing
-those as public attributes and have been leveraging them more in various
-other code bits, so I just exposed them from the onset here.  Further you
-can now use the iterator a bit more like a list in RESTfly&rsquo;s variant, as you
-can call the index of the current page directly and even use the <code>get</code>
-method and define a default response of the index doesn&rsquo;t exist.</p></li>
-
-<li><p><strong>Standard Exceptions based on HTTP Standards</strong>: I took the HTTP standard
-error codes definitions and wrapped those in exceptions&hellip;almost all of
-them.  The end result is that you&rsquo;ll get an exception thrown for a 4xx or
-5xx error that should match the expected type of error the API is throwing.
-Now I know that not all APIs play well here, and also allowed for this
-dictionary (which is stored in the <code>APISession</code>) to be overloaded if
-necessary.  This also means that with minimal effort, you could also wrap
-the exceptions with some additional logic (like how the APIErrors in
-<a href="https://pytenable.readthedocs.io">pyTenable</a> will attempt to pull the Request-UUID header).  This is all
-fairly easy to use and should all <em>just work</em>.</p></li>
-
-<li><p><strong>Improved Utilities</strong>: There are several utilities that I keep needing over
-and over again and honestly have gotten tired of constantly re-implementing
-them.  The <code>dict_merge</code> utility to merge two dictionaries together in a nice
-recursive way.  The <code>trunc</code> utility to allow for truncation of a string with
-an included suffix (if specified) and ensure the resulting length never
-exceeds the length I specify.  Generally basic stuff, but a chore to
-re-implement over and over.</p></li>
-
-<li><p><strong>Vastly improved documentation</strong>: While I have been generally quite happy
-with the documentation in <a href="https://pytenable.readthedocs.io">pyTenable</a>, the private functions never needed
-the same level of detail as they were only intended to be used by the guts
-of the library.  As I expect other folks to start using these various
-methods, functions, etc. I also spent some time really beefing up the
-doc-strings and the overall detail in the docs to bring it more in-line with
-my expectations for all public code.</p></li>
-</ul>
-
-<p>In the end, <a href="https://pytenable.readthedocs.io">pyTenable</a> will eventually be refactored to use <a href="https://restfly.readthedocs.io">RESTfly</a> instead
-of it&rsquo;s own base classes, as there isn&rsquo;t much of a reason to keep two
-independent versions of the same code.  I&rsquo;d expect that to be a further down the
-line problem however, as there is a lot more work to do with <a href="https://pytenable.readthedocs.io">pyTenable</a>.</p>
-
+  <p>
+  The more integrations I write the more it becomes apparent that there is no consistency in User-Agent strings for the purposes of identification of whom is making what calls. It&rsquo;s something that folks are supposed to do with making API calls, yet most folks don&rsquo;t even bother with it. It creates nothing but issues when the people managing the application you&rsquo;re talking to doesn&rsquo;t inform the admins who you are or what you&rsquo;re doing.
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/">VSCode Twilight Operator Theme</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Integration User-Agent String Standard Proposal</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-
 </div>
 
 </div>
@@ -389,4 +318,3 @@ line problem however, as there is a lot more work to do with <a href="https://py
 
 </body>
 </html>
-

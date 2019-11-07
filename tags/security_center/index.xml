@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security_center on Steve McGrath</title>
+    <title>security_center on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/security_center/</link>
-    <description>Recent content in Security_center on Steve McGrath</description>
+    <description>Recent content in security_center on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Fri, 30 Nov 2018 14:03:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/security_center/index.xml" rel="self" type="application/rss+xml" />

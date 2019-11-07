@@ -5,9 +5,9 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.58.0" />
 
-  <title>Steve McGrath</title>
+  <title>Integration User-Agent String Standard Proposal &middot; Steve McGrath</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Steve McGrath" href="http://stevemcgrath.io/index.xml" />
   
 
   
@@ -113,10 +111,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://stevemcgrath.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -225,7 +219,7 @@
 
   <div>
   <div class="small-print">
-    <small>&copy; Steve McGrath 2018</small>
+    <small>&copy; Steve McGrath 2019</small>
   </div>
   <div class="small-print">
     <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
@@ -240,21 +234,16 @@
 
 
 <div class="header">
-  <h1>Steve McGrath</h1>
-  <h2>Ramblings of a Security Nerd</h2>
+  <h1>Integration User-Agent String Standard Proposal</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="http://stevemcgrath.io/post/2016-01-13-initial-deployment-files-release/">Initial Deployment Files Release</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Jan 16 10:02</time>
+    <time>07 Nov 19 12:25</time>
   </div>
 
   
@@ -269,55 +258,9 @@
     
       <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/fabric">fabric</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/deployment">deployment</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  I have started working through all of the various fabric files I have and started centralizing them and cleaning them up for general consumption. These fabric scripts cover a variety of tasks from deployment and maintenance of various products to deploying some of my code. I will be updating the repository as needs arise, and as always am welcome to any input.
-Using my fabric files is actually pretty simple, however you need to have fabric installed on your workstation before anything will work.
-  </p>
-
-  
-  <footer>
-    <a href="http://stevemcgrath.io/post/2016-01-13-initial-deployment-files-release/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="http://stevemcgrath.io/post/2015-07-15-cugnet-vps-services-closing/">CUGNet VPS Services Closing</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>15 Jul 15 12:12</time>
-  </div>
-
-  
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/cugnet">cugnet</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/vps">vps</a>
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/rest">rest</a>
     
   </div>
   
@@ -325,82 +268,54 @@ Using my fabric files is actually pretty simple, however you need to have fabric
 
 </div>
 
-  </header>
+  <p>The more integrations I write the more it becomes apparent that there is no consistency in User-Agent strings for the purposes of identification of whom is making what calls.  It&rsquo;s something that folks are supposed to do with making API calls, yet most folks don&rsquo;t even bother with it.  It creates nothing but issues when the people managing the application you&rsquo;re talking to doesn&rsquo;t inform the admins who you are or what you&rsquo;re doing.  It seems like a minor thing, but without it, its a black hole of API calls and no one knows how to triage who and what is making these calls.</p>
 
-  <p>
-  After running CUGNet for a dozen or so years and having yet to break even, last week I made the hard decision to close down CUGNet&rsquo;s VPS services. It was a hard choice to make, as its something that I have done for many years, however with the propensity of cloud services and VPS providers out there, What I can offer is simply not competitive and the I need to start cutting down on the number of side projects that I have been running in order to keep my own sanity.
-  </p>
+<p>With this said, after a bit of research on how regular web browsers construct their UA strings, what they mean, and taking things like extensibility into mind, I am proposing a UA string standard for folks to use.</p>
 
-  
-  <footer>
-    <a href="http://stevemcgrath.io/post/2015-07-15-cugnet-vps-services-closing/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<pre><code>Integration/1.0 (VENDOR; PRODUCT; Build/VERSION)
+</code></pre>
 
-  
-    <article>
-  <header>
-    <h2><a href="http://stevemcgrath.io/post/2015-07-15-pysecuritycenter-2-1-release/">pySecurityCenter 2.1 Release</a></h2>
+<p>In short, its a good start to a UA string that allows folks to know Whom wrote the integration, what product is the integration working on behalf for, and what version of the integration is being used.  Using this as a starting point, I have implemented this format within RESTfly and pyTenable (available now).  This means that identifying who you are is a simple matter of specifying the right parameters.  For example in pyTenable, all you have to do is the following:</p>
 
-    <div class="post-meta">
+<pre><code class="language-python">&gt;&gt;&gt; from tenable.io import TenableIO
+&gt;&gt;&gt; tio = TenableIO(vendor='Tenable', product='Fancypants', build='1.0')
+&gt;&gt;&gt; tio._session.headers['User-Agent']
+'Integration/1.0 (Tenable; Fancypants; Build/1.0) pyTenable/0.3.28 (pyTenable/0.3.28; Python/3.7.3; Darwin/x86_64)'
+</code></pre>
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>15 Jul 15 00:21</time>
-  </div>
+<p>Note in the last line the UA string thats being passed now has not only the Integration format, but also the information for pyTenable as well.  While I bet it&rsquo;s not perfect, its a huge step forward and is a simple standard to work with.</p>
+
+<p>I&rsquo;d like to encourage other folks to start using this standard as well.  Lets make API interactions not only easy for the developers, but easy for the administrators of applications their interacting with.</p>
+
 
   
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/securitycenter">securitycenter</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable">tenable</a>
+    <a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/">RESTfly API Library</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  I&rsquo;m proud to announce the general availability for pySecurityCenter version 2.1.x accessible from PyPI immediately. pySC 2.1 supports connectivity to SecurityCenter 5, which leverages a completely new RESTful API. Because of this, the pySC SecurityCenter 5 support will be an evolving process. Whats implemented today will not be changing, however many of the convenience functions that pySecurityCenter has for SecurityCenter 4.x have not been coded into the SC5 module, as enumeration for the API is still active.
-  </p>
-
-  
-  <footer>
-    <a href="http://stevemcgrath.io/post/2015-07-15-pysecuritycenter-2-1-release/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
 
 
-<nav class="pagination" role="pagination">
   
-  <a href="http://stevemcgrath.io/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;2 / 2&nbsp;</span>
-  
-  <i class="fa fa-chevron-right"></i>
-  
-</nav>
-
-
 
 </div>
 

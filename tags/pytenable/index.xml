@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pytenable on Steve McGrath</title>
+    <title>pytenable on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/pytenable/</link>
-    <description>Recent content in Pytenable on Steve McGrath</description>
+    <description>Recent content in pytenable on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Fri, 30 Nov 2018 14:03:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/pytenable/index.xml" rel="self" type="application/rss+xml" />

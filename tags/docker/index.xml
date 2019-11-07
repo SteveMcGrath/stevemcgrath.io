@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Steve McGrath</title>
+    <title>docker on Steve McGrath</title>
     <link>http://stevemcgrath.io/tags/docker/</link>
-    <description>Recent content in Docker on Steve McGrath</description>
+    <description>Recent content in docker on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Steve McGrath 2018</copyright>
+    <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Tue, 18 Jul 2017 12:26:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
