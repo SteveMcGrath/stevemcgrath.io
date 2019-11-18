@@ -53,7 +53,7 @@
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/docker.min.js"></script>
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
   
@@ -104,6 +104,12 @@
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="http://stevemcgrath.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/projects/"><i class='fa fa-code-fork fa-fw'></i>Projects</a>
       
         </li>
       
@@ -248,7 +254,7 @@
   
     <article>
   <header>
-    <h2><a href="http://stevemcgrath.io/post/">Posts</a></h2>
+    <h2><a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Integration User-Agent String Standard Proposal</a></h2>
 
     <div class="post-meta">
 
@@ -262,21 +268,473 @@
   
 
   
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/rest">rest</a>
+    
+  </div>
+  
+  
 
 </div>
 
   </header>
 
   <p>
+  The more integrations I write the more it becomes apparent that there is no consistency in User-Agent strings for the purposes of identification of whom is making what calls. It&rsquo;s something that folks are supposed to do with making API calls, yet most folks don&rsquo;t even bother with it. It creates nothing but issues when the people managing the application you&rsquo;re talking to doesn&rsquo;t inform the admins who you are or what you&rsquo;re doing.
+  </p>
+
   
+  <footer>
+    <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/">RESTfly API Library</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>07 May 19 14:45</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/api">api</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  With all of the work thats been done with the pyTenable library, I reached a point where I was using pyTenable&rsquo;s core APISession, APIEndpoint, and APIIterator classes a lot for external work. It seemed only logical to separate these base classes from pyTenable and wrap them up into their own library to act as a framework for folks looking to build their own API libraries. The end result of this is the new Python RESTfly library, which is focused on providing a basic scaffolding to make writing API libraries similar to pyTenable&rsquo;s easy and and effective.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2019-05-07-restfly-announcement/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/">VSCode Twilight Operator Theme</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>04 Jan 19 23:45</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/vs-code">vs-code</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  So I decided to start looking at Visual Studio Code with most of the folks I know dropping Sublime like it&rsquo;s a bad habit and see what all of the hubbub is about. I will have to say that after some tweaking I&rsquo;ve been pleasantly surprised with how well VSCode works. It&rsquo;s taken a lot less tweaking to get it to a point where I&rsquo;m happy with it than it ever did with Sublime Text, and it even has some really nice features out of the box for Python.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2019-01-04-twilight-operator/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/">pyTenable v0.3.3 Released</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>30 Nov 18 14:03</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable">tenable</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.io">tenable.io</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/container_security">container_security</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/security_center">security_center</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/pysecuritycenter">pysecuritycenter</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.sc">tenable.sc</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/pytenable">pytenable</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  The pyTenable library has been rapidly evolving over the past few months. The library has seen a lot of expansion and maturation over the last several weeks. Going from version 0.1.0 at the time of last post to now 0.3.3, there has been a lot of work done to lay scaffolding for the SecurityCenter package. SecurityCenter (recently re-branded as Tenable.sc) is as large, if not larger a project as Tenable.io was.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/">pyTenable v0.1.0 Released</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>03 Oct 18 09:12</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable">tenable</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.io">tenable.io</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/container_security">container_security</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/security_center">security_center</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/pytenable">pytenable</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  After nearly 8 months of on-and-off development (mostly off, day-job work keeps my busy), I&rsquo;m proud to announce that pyTenable has hit version 0.1.0. While this may not seem like much, it&rsquo;s been a lot of work to bring it across this line in the journey so far. All of the Tenable.io Vulnerability Management API are now pythonized. Further everything in the tenable_io module has been tested out (519 tests!). Tenable has also seen fit to link to pyTenable as an official module for working with our products.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2018-10-03-pytenable-v0.1.0/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/">Nessus Network Monitor Docker Image</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Jul 17 12:26</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/docker">docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Considering there wasn&rsquo;t any Nessus Network Monitor docker images that I could find, I decided I&rsquo;d create one. Using the Nessus Scanner image as a starting point, this image should have a lot of the most common things parameterized out already. As for sniffing traffic, I&rsquo;d highly encourage you to take a look at one of the earlier posts covering Docker &amp; packet sniffing. Deploying the sensor should be a simple matter of setting up a volume for the sensor data (for persistence), linking it to a promiscuous interface, and then instantiating it:
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/">Nessus Scanner Docker Image</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Jul 17 08:10</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/docker">docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  A lot of the Nessus Scanner docker images in Docker Hub don&rsquo;t appear to be properly parameterizing a lot (or in many cases, any) of the required inputs to really get the scanner to run and connect up in an automated fashion. Further most of the images that I&rsquo;ve seen out there aren&rsquo;t cleaning up the identifying information the scanner created as part of install (such as the UUID, the master encryption key, etc.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2017-07-18-nessus-scanner-docker_image/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/">Docker Containers &amp; Network Sniffing</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>14 Jul 17 17:15</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/docker">docker</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  With all of the materials out there on the web revolving around docker containers, I thought that getting some sort of a docker network that containers could promiscuously sniff would have been a relatively easy thing to find. I was shocked to find out that, not only was this not the case, but that the general consensus was that you need to use either Docker&rsquo;s host networking (which means that these containers can&rsquo;t exist in other network name-spaces), use pass-through networking (which unless you have hardware that support SR-IOV, your out of luck), or that you resort to some serious host hacking to get the interface into the container.
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2016-10-10-trafficwatch/">TrafficWatch</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Oct 16 19:26</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/nodejs">nodejs</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/google-maps">google maps</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  TrafficWatch is a simple node.js app I wrote after trying to get Ian Harmon&rsquo;s traffic time-lapse-helper project working in Python for 30min or so on MacOS, I gave up and wrote TrafficWatch in about an hour. There are some arguments that you can specify as well if you want look at something other than Chicago traffic:
+ &ndash;name / -n Name for the GIF in the upper-left corner &ndash;url / -u URL String for that we will be time-lapsing &ndash;interval / -i The time interval (in minutes) &ndash;duration / -d The number of minutes to run &ndash;gifout / -g The output filename for the GIF &ndash;xoffset X Offset for the crop (0 means centered) &ndash;yoffset Y Offset for the crop (0 means centered) &ndash;font Font for the name and time display in the upper-left corner (default is Arial) &ndash;fontsize Size of the text (default is 32) &ndash;fontcolor Color of the text (default is #000000b0) &ndash;directory Path for the individual screencaps (default is screenshots) &ndash;gifdelay The ms delay timer for the GIF animation (default 500)  An example output would look something like this:
   </p>
 
   
 </article>
 
   
+    <article>
+  <header>
+    <h2><a href="http://stevemcgrath.io/post/2016-07-16-setting-up-pocketchip/">Setting up PocketCHIP</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>16 Jul 16 17:58</time>
+  </div>
 
   
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/chip">chip</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/pocketchip">pocketchip</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/howto">howto</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  So I got a couple of these fantastic little embedded systems from Next Thing, and started to try to set one of them up how I would like to see it setup. Basically I was looking for a web browser, SSH installed, and a few aliases to make things easy to work with.
+ NOTE: All of the operations below assume a basic understanding of terminal commands!
+ Updating the PocketCHIP and installing the software To start off, the PocketCHIP OS is slightly out of date as it&rsquo;s currently being flashed, so the first thing we need to do is update the OS to current:
+  </p>
+
+  
+  <footer>
+    <a href="http://stevemcgrath.io/post/2016-07-16-setting-up-pocketchip/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+
+  
+
+
+<nav class="pagination" role="pagination">
+  
+  <i class="fa fa-chevron-left"></i>
+  
+  <span>&nbsp;1 / 2&nbsp;</span>
+  
+  <a href="http://stevemcgrath.io/page/2/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
 
 
 </div>

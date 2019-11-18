@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.58.0" />
 
-  <title>Nessus Scanner Docker Image &middot; Steve McGrath</title>
+  <title>Projects &middot; Steve McGrath</title>
 
   
   
@@ -240,82 +240,36 @@
 
 
 <div class="header">
-  <h1>Nessus Scanner Docker Image</h1>
+  <h1>Projects</h1>
   <h2></h2>
 </div>
 <div class="content">
-
-  <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 17 08:10</time>
-  </div>
-
   
 
-  
+<h2 id="code">Code</h2>
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/docker">docker</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  <p>A lot of the Nessus Scanner docker images in Docker Hub don&rsquo;t appear to be properly parameterizing a lot (or in many cases, <em>any</em>) of the required inputs to really get the scanner to run and connect up in an automated fashion.  Further most of the images that I&rsquo;ve seen out there aren&rsquo;t cleaning up the identifying information the scanner created as part of install (such as the UUID, the master encryption key, etc.).  As a result of this, I&rsquo;ve released my own Nessus Scanner docker image that takes a lot of this into account.  Deploying the scanner should be a simple matter of setting up a volume for the scanner data (for persistence) and then instantiating it:</p>
-
-<pre><code class="language-bash">docker volume create nessus_scanner_var
-docker run -d -v nessus_scanner_var:/opt/nessus/var/nessus \
-		--name=nessus_scanner \
-		-e SCANNER_NAME=${SCANNER_NAME}	\
-		-e LINKING_KEY=${LINKING_KEY} stevemcgrath/nessus_scanner:latest
-</code></pre>
-
-<p>For more detailed information, feel free to take a look at both the <a href="https://hub.docker.com/r/stevemcgrath/nessus_scanner/">Docker Hub page</a> and the <a href="https://github.com/stevemcgrath/docker-nessus_scanner">Github repo</a>.</p>
-
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="http://stevemcgrath.io/post/2017-07-14-docker_network_sniff/">Docker Containers &amp; Network Sniffing</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/">Nessus Network Monitor Docker Image</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="http://stevemcgrath.io/post/2017-07-18-nessus-monitor-image/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
-
-  
+<ul>
+<li><strong><a href="http://dofler.net">Dofler</a></strong><br />
+A network sniffer for information security conferences.</li>
+<li><strong><a href="https://pytenable.readthedocs.io">pyTenable</a></strong><br />
+pyTenable is a python API into Tenable.io and Tenable.sc</li>
+<li><strong><a href="https://restfly.readthedocs.io">RESTfly</a></strong><br />
+RESTfly is a generic API library to aid in developing python modules for APIs</li>
+<li><strong><a href="https://github.com/tenable/Security-Hub">Tenable/AWS Security Hub</a></strong><br />
+Writes Tenable.io Vuln data into AWS Security Hub</li>
+<li><strong><a href="https://github.com/tenable/integration-cscc">Tenable/Google Cloud Security Command Center Integration</a></strong><br />
+Writes Tenable.io Vulnerability data into Google CSCC</li>
+<li><strong><a href="https://github.com/tenable/integrations-ibm-cloudpak-for-security">Tenable/IBM CloudPak for Security</a></strong><br />
+Writes Tenable.io Asset and Vuln data into IBM CloudPak for Security</li>
+<li><strong><a href="https://github.com/tenable/integration-jira-cloud">Tenable/Jira Cloud</a></strong><br />
+Writes Tenable Vuln data into Jira tickets</li>
+<li><strong><a href="https://github.com/tenable/integration-asc">Tenable/Microsoft Azure Security Center</a></strong><br />
+Writes Tenable.io Vuln data into Azure Security Center</li>
+<li><strong><a href="https://hub.docker.com/repository/docker/stevemcgrath/nessus_monitor">Unofficial Nessus Network Monitor Image</a></strong><br />
+An auto-built Nessus Network Monitor (NNM) Image</li>
+<li><strong><a href="https://hub.docker.com/repository/docker/stevemcgrath/nessus_scanner">Unofficial Nessus Scanner Image</a></strong><br />
+An auto-built Nessus Scanner Image</li>
+</ul>
 
 </div>
 

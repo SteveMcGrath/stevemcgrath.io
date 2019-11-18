@@ -145,12 +145,28 @@ Using my fabric files is actually pretty simple, however you need to have fabric
     </item>
     
     <item>
-      <title></title>
+      <title>About Me</title>
       <link>http://stevemcgrath.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://stevemcgrath.io/about/</guid>
-      <description></description>
+      <description>As a former Red-teamer, then Blue-teamer, before spending his last several years at Tenable, Steve has had worn a lot of hats and played a lot of roles within various organizations. Currently working as part of the Technology Alliances team within Tenable, his goal is to work with various partners to help them understand the Tenable platform APIs and steer them down the right path for smooth integrations.
+He has also written a lot of different pieces of software over the years, which can be referenced in his Github account and some of the larger ones referenced on the projects page.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://stevemcgrath.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/projects/</guid>
+      <description>Code  Dofler
+A network sniffer for information security conferences. pyTenable
+pyTenable is a python API into Tenable.io and Tenable.sc RESTfly
+RESTfly is a generic API library to aid in developing python modules for APIs Tenable/AWS Security Hub
+Writes Tenable.io Vuln data into AWS Security Hub Tenable/Google Cloud Security Command Center Integration
+Writes Tenable.io Vulnerability data into Google CSCC Tenable/IBM CloudPak for Security
+Writes Tenable.io Asset and Vuln data into IBM CloudPak for Security Tenable/Jira Cloud</description>
     </item>
     
   </channel>
