@@ -312,7 +312,7 @@
 
 <h3 id="step-4-the-cloud-init-config">Step 4: The Cloud-Init Config</h3>
 
-<p>Create a [Cloud Init][cloud-init] configuration file for Multipass to use.  Thanks to an older version of LXD being pre-installed in Ubuntu, the only way I found to reliably always get the VM loaded how I wanted was to embed everything into the <code>runcmd</code> declaration.  This means it&rsquo;s not as nicely laid out as I would like, however it always builds correctly, so I&rsquo;ll just call this a win and move on.</p>
+<p>Create a <a href="https://cloud-init.io/">Cloud Init</a> configuration file for Multipass to use.  Thanks to an older version of LXD being pre-installed in Ubuntu, the only way I found to reliably always get the VM loaded how I wanted was to embed everything into the <code>runcmd</code> declaration.  This means it&rsquo;s not as nicely laid out as I would like, however it always builds correctly, so I&rsquo;ll just call this a win and move on.</p>
 
 <p>Copy the following yaml config and save it into <code>lxd_cloud_init.yaml</code>.  Note that <code>--storage-create-loop</code> and <code>--storage-backend</code> options will effectively create a ZFS pool of 40Gb.  While in my experiences with Multipass on MacOS has lead me to believe that the disk images are sparse images (they grow as needed), you can adjust that number down if you need to.</p>
 
