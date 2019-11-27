@@ -56,7 +56,7 @@ runcmd:
 
 ### Step 5: Start up the VM
 
-Depending on the containers that you'll be running (and resources that you have available), you may want to adjust the sizing of the VM you're creating.  For my purposes, I have been using 2 CPUs, 6Gb Ram, and 50Gb disk.  This will likely take a few minutes to be patient as it provisions the host.
+Depending on the containers that you'll be running (and resources that you have available), you may want to adjust the sizing of the VM you're creating.  For my purposes, I have been using 2 CPUs, 6Gb Ram, and 50Gb disk.  This will likely take a few minutes so be patient as it provisions the host.
 
 ```bash
 multipass launch -c 2 -m 6G -d 50G -n lxd --cloud-init lxd_cloud_config.yaml
