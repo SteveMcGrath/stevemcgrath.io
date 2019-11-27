@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/linux/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/lxd/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/post/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/vm/</loc>
+    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://stevemcgrath.io/tags/api/</loc>
     <lastmod>2019-11-07T12:25:00+00:00</lastmod>
   </url>
@@ -13,27 +48,12 @@
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/post/</loc>
-    <lastmod>2019-11-07T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://stevemcgrath.io/tags/python/</loc>
     <lastmod>2019-11-07T12:25:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://stevemcgrath.io/tags/rest/</loc>
-    <lastmod>2019-11-07T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/</loc>
-    <lastmod>2019-11-07T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/</loc>
     <lastmod>2019-11-07T12:25:00+00:00</lastmod>
   </url>
   
@@ -139,11 +159,6 @@
   
   <url>
     <loc>http://stevemcgrath.io/tags/howto/</loc>
-    <lastmod>2016-07-16T17:58:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/linux/</loc>
     <lastmod>2016-07-16T17:58:00+00:00</lastmod>
   </url>
   

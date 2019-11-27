@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Steve McGrath 2019</copyright>
-    <lastBuildDate>Sat, 16 Jul 2016 17:58:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 12:25:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building a local LXD-based Lab</title>
+      <link>http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/</link>
+      <pubDate>Wed, 27 Nov 2019 12:25:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/</guid>
+      <description>I often have the need to spin up a Linux host to perform some quick testing for something, and the amount of legwork and time to get a simple VM up and running is often as time-consuming as getting the software installed to interact with it. I needed something that was quicker to get me bootstrapped, simple enough to not require me to learn a whole ton to get going, and repeatable enough for me to even write some dirty scripts to make standing something up repeatable.</description>
+    </item>
     
     <item>
       <title>Setting up PocketCHIP</title>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.58.0" />
+
+  <title>Building a local LXD-based Lab &middot; Steve McGrath</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/docker.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://stevemcgrath.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://stevemcgrath.io/">SteveMcGrath</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/projects/"><i class='fa fa-code-fork fa-fw'></i>Projects</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/stevemcgrath" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/chigeek" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/chigeek" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://reddit.com/user/stevemcgrath" target="_blank"><i class="fa fa-reddit-square fa-fw"></i>Reddit</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/stevemcgrath" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/stevemcgrath" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/stevemcgrath" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; Steve McGrath 2019</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Building a local LXD-based Lab</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>27 Nov 19 12:25</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/lxd">lxd</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/linux">linux</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/vm">vm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>I often have the need to spin up a Linux host to perform some quick testing for something, and the amount of legwork and time to get a simple VM up and running is often as time-consuming as getting the software installed to interact with it.  I needed something that was quicker to get me bootstrapped, simple enough to not require me to learn a whole ton to get going, and repeatable enough for me to even write some dirty scripts to make standing something up repeatable.</p>
+
+<p>With that in mind I had already converted my massive ESXi host into an Ubuntu box running LXD and started using it to stand up things quickly, however I had issue of working on things when I was away from my home lab, as I&rsquo;d either have to VPN in, or stand up some cloud instance and incur the costs of that when I have plenty of perfectly usable compute time on my laptop locally.</p>
+
+<p>What I settled on was building the virtual machine to run LXD within using a newer tool that Canonical had released called <a href="https://multipass.run/">Multipass</a>.  It uses whatever default hypervisor is for the OS, which means I don&rsquo;t have to install yet another hypervisor in order to use it.  Secondly the VMs are lightweight, already tuned for the hypervisor, and can be launched with a single command.  Lastly the ability to provide a simple config file to inform Multipass how to pre-configure the OS meant that I can repeatedly re-build the host if I need to, satisfying my desire to not have to treat any part of this setup as a pet.</p>
+
+<p>If you&rsquo;re on a Linux host already, then the only reason to go through the hassle of running Multipass to do this is for isolating your own system from the host running LXD.  Otherwise, just install and use the LXD service available through the <a href="https://snapcraft.io/lxd">Snapcraft</a> store.</p>
+
+<h2 id="setting-up-the-lab">Setting up the Lab</h2>
+
+<h3 id="step-1-install-a-package-manager">Step 1: Install a Package Manager</h3>
+
+<p>If you haven&rsquo;t already installed one of these, then you&rsquo;re missing out on doing things the easy way.  On MacOS, the universal standard is <a href="https://brew.sh/">Homebrew</a>.  On Windows I almost only ever heard about <a href="https://chocolatey.org/">Chocolatey</a>.  For Linux users, <a href="https://snapcraft.io/">Snap</a> is what I generally hear about the most.</p>
+
+<h3 id="step-2-install-multipass">Step 2: Install Multipass</h3>
+
+<p>As mentioned before, Multipass is our tool to manage the <a href="https://ubuntu.com">Ubuntu</a>-based virtual machine.</p>
+
+<ul>
+<li><strong>MacOS</strong>: <code>brew install multipass</code></li>
+<li><strong>Windows</strong>: <code>choco install multipass</code></li>
+<li><strong>Linux</strong>: <code>snap install multipass</code></li>
+</ul>
+
+<h3 id="step-3-install-the-lxd-client">Step 3: Install the LXD Client</h3>
+
+<p>For MacOS and Windows, this will install only the client.  In the case of Linux however, you&rsquo;ll get both the client and the backend-service.  Unless you initialize the service on Linux, it wont be in a usable state however.</p>
+
+<ul>
+<li><strong>MacOS</strong>: <code>brew install lxc</code></li>
+<li><strong>Windows</strong>: <code>choco install lxc</code></li>
+<li><strong>Linux</strong>: <code>snap install lxd</code></li>
+</ul>
+
+<h3 id="step-4-the-cloud-init-config">Step 4: The Cloud-Init Config</h3>
+
+<p>Create a [Cloud Init][cloud-init] configuration file for Multipass to use.  Thanks to an older version of LXD being pre-installed in Ubuntu, the only way I found to reliably always get the VM loaded how I wanted was to embed everything into the <code>runcmd</code> declaration.  This means it&rsquo;s not as nicely laid out as I would like, however it always builds correctly, so I&rsquo;ll just call this a win and move on.</p>
+
+<p>Copy the following yaml config and save it into <code>lxd_cloud_init.yaml</code>.  Note that <code>--storage-create-loop</code> and <code>--storage-backend</code> options will effectively create a ZFS pool of 40Gb.  While in my experiences with Multipass on MacOS has lead me to believe that the disk images are sparse images (they are only as big as they need to be and then grow as needed), you can adjust that number down if you need to.</p>
+
+<p>Also note that the password set to the LXD subsystem is <strong>lxd-island</strong>.  We will need this later.</p>
+
+<pre><code class="language-yaml">#cloud-config
+
+# These things all need to happen in this order.  Sadly this seems to be the
+# only way to get all of this to work correctly.
+runcmd:
+  - [sudo, apt, -y, remove, lxd, lxd-client]
+  - [sudo, snap, install, lxd]
+  - [sudo, lxd, init, --auto, --network-address, &quot;[::]&quot;, --trust-password, &quot;lxd-island&quot;, --storage-backend=zfs, --storage-create-loop=40]
+  - [usermod, -aG, lxd, multipass]
+</code></pre>
+
+<h3 id="step-5-start-up-the-vm">Step 5: Start up the VM</h3>
+
+<p>Depending on the containers that you&rsquo;ll be running (and resources that you have available), you may want to adjust the sizing of the VM you&rsquo;re creating.  For my purposes, I have been using 2 CPUs, 6Gb Ram, and 50Gb disk.  This will likely take a few minutes to be patient as it provisions the host.</p>
+
+<pre><code class="language-bash">multipass launch -c 2 -m 6G -d 50G -n lxd --cloud-init lxd_cloud_config.yaml
+</code></pre>
+
+<h3 id="step-6-link-the-lxc-client-to-the-vm">Step 6: Link the LXC Client to the VM</h3>
+
+<p>Now to link the VM to your client installed locally.  This gains the ability to interact with the VM directly on your machine.  No need to remember to shell into the VM or to remote in via SSH.  We will need the IP of the VM however, so you will first need to grab that by running <code>multipass list</code> and noting the IP of (what is likely the only) the vm with the name of <strong>lxd</strong>.</p>
+
+<p>As you can have the client talk to multiple remote LXD hosts, we will have to name this remote host in order to uniquely identify it.  For the purposes of this walk-through, I will be calling it <strong>labbox</strong>.</p>
+
+<pre><code class="language-bash">lxc remote add labbox 192.168.64.3 --accept-certificate --password &quot;lxd-island&quot;
+</code></pre>
+
+<h3 id="step-7-optional-make-the-vm-your-default-remote">Step 7 (Optional): Make the VM your default remote</h3>
+
+<p>This last step is optional, however unless you intend on talking to a lot of other LXD hosts, I generally recommend making the local lab you just created the default LXD service when using the client.</p>
+
+<pre><code class="language-bash">lxc remote switch labbox
+</code></pre>
+
+<h2 id="getting-started-with-lxd">Getting started with LXD</h2>
+
+<p>Now that you have a system setup, getting a new container up and running is really quite simple.  To spin up a container its just:</p>
+
+<pre><code class="language-bash">lxc launch images:ubuntu/18.04 example1
+</code></pre>
+
+<p>Decided ypu wanted a prompt on the container?</p>
+
+<pre><code class="language-bash">lxc exec example1 -- bash
+</code></pre>
+
+<p>Maybe you wanted to create a CentOS container next?</p>
+
+<pre><code class="language-bash">lxc launch images:centos/7 example2
+</code></pre>
+
+<p>What about installing SSH on the CentOS host?</p>
+
+<pre><code class="language-bash">lxc exec example2 -- yum -y install openssh-server
+</code></pre>
+
+<p>Want to expose the SSH service to port 2222 on the VM?</p>
+
+<pre><code class="language-bash">lxc config device add example2 ssh-proxy proxy listen=tcp:0.0.0.0:2222 connect=tcp:127.0.0.1:22
+</code></pre>
+
+<p>Maybe push a file into the container?</p>
+
+<pre><code class="language-bash">lxc file push example_file.txt example2/tmp
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/">Integration User-Agent String Standard Proposal</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://stevemcgrath.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79231696-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+
