@@ -119,6 +119,7 @@ lxc file push example_file.txt example2/tmp
 ```
 
 [brew]: https://brew.sh/
+[cloud-init]: https://cloud-init.io/
 [choco]: https://chocolatey.org/
 [lxd]: https://linuxcontainers.org/lxd/
 [multipass]: https://multipass.run/
