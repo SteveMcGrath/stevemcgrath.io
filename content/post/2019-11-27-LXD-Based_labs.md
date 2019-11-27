@@ -38,7 +38,7 @@ For MacOS and Windows, this will install only the client.  In the case of Linux 
 
 Create a [Cloud Init][cloud-init] configuration file for Multipass to use.  Thanks to an older version of LXD being pre-installed in Ubuntu, the only way I found to reliably always get the VM loaded how I wanted was to embed everything into the `runcmd` declaration.  This means it's not as nicely laid out as I would like, however it always builds correctly, so I'll just call this a win and move on.
 
-Copy the following yaml config and save it into `lxd_cloud_init.yaml`.  Note that ``--storage-create-loop`` and ``--storage-backend`` options will effectively create a ZFS pool of 40Gb.  While in my experiences with Multipass on MacOS has lead me to believe that the disk images are sparse images (they are only as big as they need to be and then grow as needed), you can adjust that number down if you need to.
+Copy the following yaml config and save it into `lxd_cloud_init.yaml`.  Note that ``--storage-create-loop`` and ``--storage-backend`` options will effectively create a ZFS pool of 40Gb.  While in my experiences with Multipass on MacOS has lead me to believe that the disk images are sparse images (they grow as needed), you can adjust that number down if you need to.
 
 Also note that the password set to the LXD subsystem is **lxd-island**.  We will need this later.
 
