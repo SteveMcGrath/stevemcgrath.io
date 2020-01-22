@@ -281,15 +281,28 @@
 <pre><code>Integration/1.0 (VENDOR; PRODUCT; Build/VERSION)
 </code></pre>
 
+<p>The format allows for more attributes to be added after the Build identifier as well should the developer desire, however the base format is quite simple:</p>
+
+<ul>
+<li><strong>VENDOR</strong>: The vendor writing the integration (this is you, not what you&rsquo;re integrating to).</li>
+<li><strong>PRODUCT</strong>: The product that is handling the integration (allows the ability to distinguish between multiple products from the same vendor)</li>
+<li><strong>VERSION</strong>: Some sort of version identifier that allows the ability to track what versions of the integration are being used.</li>
+</ul>
+
 <p>In short, its a good start to a UA string that allows folks to know Whom wrote the integration, what product is the integration working on behalf for, and what version of the integration is being used.  Using this as a starting point, I have implemented this format within RESTfly and pyTenable (available now).  This means that identifying who you are is a simple matter of specifying the right parameters.  For example in pyTenable, all you have to do is the following:</p>
 
 <pre><code class="language-python">&gt;&gt;&gt; from tenable.io import TenableIO
-&gt;&gt;&gt; tio = TenableIO(vendor='Tenable', product='Fancypants', build='1.0')
+&gt;&gt;&gt; tio = TenableIO(vendor='SMC Industries', product='Fancypants', build='1.0')
 &gt;&gt;&gt; tio._session.headers['User-Agent']
-'Integration/1.0 (Tenable; Fancypants; Build/1.0) pyTenable/0.3.28 (pyTenable/0.3.28; Python/3.7.3; Darwin/x86_64)'
+'Integration/1.0 (SMC Industries; Fancypants; Build/1.0) pyTenable/0.3.28 (pyTenable/0.3.28; Python/3.7.3; Darwin/x86_64)'
 </code></pre>
 
 <p>Note in the last line the UA string thats being passed now has not only the Integration format, but also the information for pyTenable as well.  While I bet it&rsquo;s not perfect, its a huge step forward and is a simple standard to work with.</p>
+
+<p>For those looking to consume this string, an easy regex to process the string is as follows:</p>
+
+<pre><code class="language-regex">Integration\/1\.0 \((?&lt;vendor&gt;[^\;]+);[\W]{0,1}(?&lt;product&gt;[^\;]+);[\W]{0,1}Build\/(?&lt;version&gt;[^\;)]+)
+</code></pre>
 
 <p>I&rsquo;d like to encourage other folks to start using this standard as well.  Lets make API interactions not only easy for the developers, but easy for the administrators of applications their interacting with.</p>
 
