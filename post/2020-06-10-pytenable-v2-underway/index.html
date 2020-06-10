@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.58.0" />
 
-  <title>Tags &middot; Steve McGrath</title>
+  <title>pyTenable version 2 under development &middot; Steve McGrath</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Steve McGrath" href="http://stevemcgrath.io/tags/index.xml" />
   
 
   
@@ -119,10 +117,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://stevemcgrath.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -246,158 +240,121 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>pyTenable version 2 under development</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>10 Jun 20 14:20</time>
+  </div>
+
+  
+
+  
+
   
   
-    <li>
-      <a href="python">python</a>
-      <span>&#40;8&#41;</span>
-    </li>
   
-    <li>
-      <a href="tenable">tenable</a>
-      <span>&#40;4&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable">tenable</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.io">tenable.io</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.sc">tenable.sc</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/tenable.ot">tenable.ot</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/nessus">nessus</a>
+    
+  </div>
   
-    <li>
-      <a href="docker">docker</a>
-      <span>&#40;3&#41;</span>
-    </li>
   
-    <li>
-      <a href="tenable.io">tenable.io</a>
-      <span>&#40;3&#41;</span>
-    </li>
+
+</div>
+
+  <p>As pyTenable starts to near it&rsquo;s 3rd birthday, I&rsquo;ve started working on a
+complete rewrite of the codebase.  For a number of reasons, the current v1 code
+has become a monstrosity of tests, repeated code, and assumptions in the APIs
+that are no longer correct.  Thats not to say that it doesn&rsquo;t work, or even work
+well for what folks are using it for, just that code maintainability has been a
+concern as of late.  My hope is that with this v2 codebase, that some of the
+issues can be ironed out, and that the test suite can be brought under control
+(1500+ tests as of writing!!).</p>
+
+<p>To start, I&rsquo;m removing all of the base connection logic from the library and
+instead relying on the work I have been doing on the <a href="https://restfly.readthedocs.io">RESTfly library</a>.
+Over the last year RESTfly has become my goto library to use when writing
+wrappers for APIs, and there is no reason to exclude the library that started
+this journey.  As RESTfly takes into account all of the lessons learned from
+pyTenable, and then extends them, the overall amount of connection code is now
+quite minimal (from <a href="https://github.com/tenable/pyTenable/blob/master/tenable/base.py#L288-L634">346 lines</a> to <a href="https://github.com/tenable/pyTenable/blob/v2/tenable/base/platform.py#L7-L113">106 lines</a>).</p>
+
+<p>Also by leveraging some of the newer capabilities in RESTfly, the APIEndpoint
+classes themselves become quite reusable, as they take advantage of the newer
+private verb methods within RESTfly.  This would mean that even
+<a href="https://github.com/tenable/pyTenable/blob/master/tenable/io/access_groups.py#L236-L246">simple calls</a> can be condensed to a <a href="https://github.com/tenable/pyTenable/blob/v2/tenable/io/vm/access_groups.py#L215-L224">single line</a>.</p>
+
+<p>For the purpose of validating the inputs provided by the caller, we will be
+shying away from the olf check function and instead leverage the awesome
+<a href="https://marshmallow.readthedocs.io/en/stable/">Marshmallow library</a>.  While our use-case is a bit opposite of the
+traditional use-case that Marshmallow is used for, with minimal tinkering I&rsquo;ve
+been able to use it with some significant successes.  For example, the
+annoyingly complicated <a href="https://github.com/tenable/pyTenable/blob/master/tenable/io/base.py#L9-L88">filter validation and transformation code</a>
+code (which as I had to bolt onto it, regretted writing this way) has instead
+been properly <a href="https://github.com/tenable/pyTenable/tree/v2/tenable/io/schemas/filters">broken down into the different filter formats</a>.</p>
+
+<p>Lastly as the Tenable.io API grew over time, the structure of the Tenable.io
+package within the library proved to be quite constraining.  The new library
+will properly break down the APIs into the apps within the platform.  This
+should also solve for some of the method overloading that currently has to
+happen.</p>
+
+<p>The end result of all of this is that even on a simpler API (such as
+access-groups), the overall number of lines that need to be written (including
+the doc-strings) went from <a href="https://github.com/tenable/pyTenable/blob/master/tenable/io/access_groups.py">363 lines</a> to <a href="https://github.com/tenable/pyTenable/blob/v2/tenable/io/vm/access_groups.py">288 lines</a>.</p>
+
+<p>The v2 codebase is being written in a <a href="https://github.com/tenable/pyTenable/tree/v2">bare branch</a> within the pyTenable
+repository.  If you&rsquo;re interested in monitoring its progress, by all means take
+a gander at the work being done.</p>
+
+
   
-    <li>
-      <a href="api">api</a>
-      <span>&#40;2&#41;</span>
-    </li>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/">Building a local LXD-based Lab</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
   
-    <li>
-      <a href="container_security">container_security</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="linux">linux</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="pytenable">pytenable</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="security_center">security_center</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="tenable.sc">tenable.sc</a>
-      <span>&#40;2&#41;</span>
-    </li>
-  
-    <li>
-      <a href="chip">chip</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="conferences">conferences</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="cugnet">cugnet</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="deployment">deployment</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="dofler">dofler</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="fabric">fabric</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="google-maps">google-maps</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="howto">howto</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="lxd">lxd</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="nessus">nessus</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="nodejs">nodejs</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="pocketchip">pocketchip</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="pysecuritycenter">pysecuritycenter</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="rest">rest</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="securitycenter">securitycenter</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="tenable.ot">tenable.ot</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="vm">vm</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="vps">vps</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="vs-code">vs-code</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-  </ul>
+
 </div>
 
 </div>
@@ -424,3 +381,4 @@
 
 </body>
 </html>
+

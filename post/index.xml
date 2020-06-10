@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Steve McGrath 2019</copyright>
-    <lastBuildDate>Wed, 27 Nov 2019 12:25:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 14:20:00 +0000</lastBuildDate>
     
 	<atom:link href="http://stevemcgrath.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>pyTenable version 2 under development</title>
+      <link>http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/</link>
+      <pubDate>Wed, 10 Jun 2020 14:20:00 +0000</pubDate>
+      
+      <guid>http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/</guid>
+      <description>As pyTenable starts to near it&amp;rsquo;s 3rd birthday, I&amp;rsquo;ve started working on a complete rewrite of the codebase. For a number of reasons, the current v1 code has become a monstrosity of tests, repeated code, and assumptions in the APIs that are no longer correct. Thats not to say that it doesn&amp;rsquo;t work, or even work well for what folks are using it for, just that code maintainability has been a concern as of late.</description>
+    </item>
     
     <item>
       <title>Building a local LXD-based Lab</title>

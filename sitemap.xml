@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://stevemcgrath.io/tags/nessus/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/post/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/python/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable.io/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable.ot/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stevemcgrath.io/tags/tenable.sc/</loc>
+    <lastmod>2020-06-10T14:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://stevemcgrath.io/post/2019-11-27-lxd-based_labs/</loc>
     <lastmod>2019-11-27T12:25:00+00:00</lastmod>
   </url>
@@ -18,21 +68,6 @@
   </url>
   
   <url>
-    <loc>http://stevemcgrath.io/post/</loc>
-    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/</loc>
-    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/</loc>
-    <lastmod>2019-11-27T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://stevemcgrath.io/tags/vm/</loc>
     <lastmod>2019-11-27T12:25:00+00:00</lastmod>
   </url>
@@ -44,11 +79,6 @@
   
   <url>
     <loc>http://stevemcgrath.io/post/2019-11-07-integration-ua-string-standard/</loc>
-    <lastmod>2019-11-07T12:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/python/</loc>
     <lastmod>2019-11-07T12:25:00+00:00</lastmod>
   </url>
   
@@ -94,21 +124,6 @@
   
   <url>
     <loc>http://stevemcgrath.io/tags/security_center/</loc>
-    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/tenable/</loc>
-    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/tenable.io/</loc>
-    <lastmod>2018-11-30T14:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://stevemcgrath.io/tags/tenable.sc/</loc>
     <lastmod>2018-11-30T14:03:00+00:00</lastmod>
   </url>
   

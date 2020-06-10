@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tenable.sc on Steve McGrath</title>
-    <link>http://stevemcgrath.io/tags/tenable.sc/</link>
-    <description>Recent content in tenable.sc on Steve McGrath</description>
+    <title>tenable.ot on Steve McGrath</title>
+    <link>http://stevemcgrath.io/tags/tenable.ot/</link>
+    <description>Recent content in tenable.ot on Steve McGrath</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Steve McGrath 2019</copyright>
     <lastBuildDate>Wed, 10 Jun 2020 14:20:00 +0000</lastBuildDate>
     
-	<atom:link href="http://stevemcgrath.io/tags/tenable.sc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://stevemcgrath.io/tags/tenable.ot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/</guid>
       <description>As pyTenable starts to near it&amp;rsquo;s 3rd birthday, I&amp;rsquo;ve started working on a complete rewrite of the codebase. For a number of reasons, the current v1 code has become a monstrosity of tests, repeated code, and assumptions in the APIs that are no longer correct. Thats not to say that it doesn&amp;rsquo;t work, or even work well for what folks are using it for, just that code maintainability has been a concern as of late.</description>
-    </item>
-    
-    <item>
-      <title>pyTenable v0.3.3 Released</title>
-      <link>http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/</link>
-      <pubDate>Fri, 30 Nov 2018 14:03:00 +0000</pubDate>
-      
-      <guid>http://stevemcgrath.io/post/2018-11-30-pytenable-v0.3.3/</guid>
-      <description>The pyTenable library has been rapidly evolving over the past few months. The library has seen a lot of expansion and maturation over the last several weeks. Going from version 0.1.0 at the time of last post to now 0.3.3, there has been a lot of work done to lay scaffolding for the SecurityCenter package. SecurityCenter (recently re-branded as Tenable.sc) is as large, if not larger a project as Tenable.io was.</description>
     </item>
     
   </channel>
