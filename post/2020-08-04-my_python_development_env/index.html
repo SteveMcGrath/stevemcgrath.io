@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.58.0" />
+
+  <title>My Development Setup &middot; Steve McGrath</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="http://stevemcgrath.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/docker.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://stevemcgrath.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://stevemcgrath.io/">SteveMcGrath</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://stevemcgrath.io/projects/"><i class='fa fa-code-fork fa-fw'></i>Projects</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/stevemcgrath" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/chigeek" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/chigeek" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://reddit.com/user/stevemcgrath" target="_blank"><i class="fa fa-reddit-square fa-fw"></i>Reddit</a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/stevemcgrath" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://bitbucket.org/stevemcgrath" target="_blank"><i class="fa fa-bitbucket-square fa-fw"></i>Bitbucket</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://keybase.io/stevemcgrath" target="_blank"><i class="fa fa-key fa-fw"></i>Keybase</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; Steve McGrath 2019</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>My Development Setup</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>17 Aug 20 11:07</time>
+  </div>
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://stevemcgrath.io/tags/macos">macos</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>I have been asked many times over the year how I have my python development
+environment setup, and while some of the tooling has changed a little over the
+years, the changes have been surprisingly minor.  I figured it was about time
+to document what I&rsquo;m using, and how I have it all setup.</p>
+
+<h3 id="what-i-use">What I Use</h3>
+
+<p>I have been using a Mac as my primary workstation since some time in 2004, so
+I will warn that some of this tooling is fairly MacOS specific, however most of
+it should be usable regardless of the operating system you&rsquo;re on.</p>
+
+<ul>
+<li><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>: Over the years I
+have switched code editors many times, most recently switching from Sublime
+Text to VSCode.  I know a lot of folks like using PyCharm as well, however
+I personally found it making too many assumptions and getting in my way.</li>
+<li><strong><a href="https://iterm2.com/">iTerm2</a></strong>: The default Apple Terminal.app is just
+<em>ok</em>.  iTerm2 on the other-hand has tons of options to customize it to your
+heart&rsquo;s content and it&rsquo;s been my goto for many years.</li>
+<li><strong><a href="https://www.git-tower.com/">Git Tower</a></strong>: I know most folks just say &ldquo;use
+the command-line git commands&rdquo;, and I can&rsquo;t argue that.  I just personally
+don&rsquo;t want to have to think about what the command is that I want to use.
+Tower is really powerful and has been my goto GUI client for git for a few
+years now.  I still need to drop into the cli every now and again, but it&rsquo;s
+rare.</li>
+<li><strong><a href="https://brew.sh/">Homebrew</a></strong>: Homebrew is the package management tool that
+almost should be installed on Macs by default in my opinion.  Almost everyone
+I talk to installs Homebrew as one of their primary basic tools, and it makes
+managing applications on MacOS just that much easier.</li>
+<li><strong><a href="https://github.com/pyenv/pyenv">PyEnv</a></strong>: If you ever want to work with a
+Python version other than the system-installed Python interpreter, PyEnv is
+almost a must.  It&rsquo;ll install almost any version of python you wish, and makes
+it trivial to switch between them once installed.</li>
+<li><strong><a href="https://pypi.org/project/virtualenv/">VirtualEnv</a></strong>: Similarly to PyEnv,
+virtualenv allows you to silo your Python package indexes into different
+environments.  They are lightweight, simple to setup, and easy to work with.
+A goto in any Python developer&rsquo;s toolbelt.</li>
+<li><strong><a href="https://bpython-interpreter.org/">bPython</a></strong>: I know a lot of folks like
+iPython, and I think its more popular because of it&rsquo;s inclusion in Jupyter.
+I&rsquo;ve honestly preferred something lightweight myself, and have found that
+bPython seems to strike that balance when I want to work directly within the
+interpreter.  Syntax highlighting, history, tab completion, and docstring
+tooltips have made this invaluable to me while I work out something.</li>
+<li><strong><a href="https://github.com/zsh-users/antigen">Antigen</a></strong>: Not a Python-specific
+tool per-say, however antigen is what I use manage my ZSH shell for me.</li>
+</ul>
+
+<h2 id="setting-it-all-up">Setting it all up</h2>
+
+<p>The script example below is excepts taken from my MacOS system setup script.  I generally use this every time I setup a new Mac or rebuild my existing Mac to clean out whatever cruft may have collected from my near constant tinkering.</p>
+
+<p>I do also use a solution like Dropbox or Strongsync to synchronize my dotfiles to the host.  I didn&rsquo;t include that here as it may negatively impact someone&rsquo;s setup if they just blindly copy/pasted.  I may cover that as a later post.</p>
+
+<p>Some other bits I mentioned above you wont see in the script below (such as bpython) as I typically install those within the virtualenv that I&rsquo;m working within.</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+echo &quot;You will need to provide your password so that we can&quot;
+echo &quot;maintain the sudo auth tokens for the rest of the script.&quot;
+echo &quot;&quot;
+echo &quot;This prevents having to randomly type in the sudo password&quot;
+echo &quot;during the script's run cycle.&quot;
+trap &quot;exit&quot; INT TERM
+trap &quot;kill 0&quot; EXIT
+sudo -v || exit $?
+sleep 1
+while true; do
+    sleep 60
+    sudo -nv
+done 2&gt;/dev/null &amp;
+
+clear
+echo &quot;Please verify that you are signed into the MacOS App Store.&quot;;read continue
+clear
+
+# Install X-Code CLI Tools
+xcode-select --install &amp;&amp; sleep 1
+osascript                                                       \
+    -e 'tell application &quot;System Events&quot;'                       \
+    -e 'tell process &quot;Install Command Line Developer Tools&quot;'    \
+    -e 'keystroke return'                                       \
+    -e 'click button &quot;Agree&quot; of window &quot;License Agreement&quot;'     \
+    -e 'end tell'                                               \
+    -e 'end tell'
+clear
+
+# Install Homebrew
+/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
+
+# Install packages from homebrew
+brew install            \
+    mas                 \
+    antigen             \
+    pyenv               \
+    pyenv-virtualenv
+
+# Install Amphetamine from the App Store and then caffeinate the system so that
+# it won't sleep while the rest of the script runs.
+mas install 937984704
+caffeinate -dims &amp;
+CAFFEINE_PID=$!
+
+# Install casks
+brew cask install       \
+    visual-studio-code  \
+    tower               \
+    docker              \
+    iterm2
+
+# Install python versions
+pyenv install 3.8.0
+pyenv install 3.7.5
+pyenv install 3.6.9
+pyenv install 3.5.8
+pyenv install 3.4.10
+pyenv install 2.7.17
+
+# Shim the current environment with pyenv
+eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;
+
+# Install the VSCode Extensions
+code --install-extension eamodio.gitlens
+code --install-extension magicstack.MagicPython
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension redhat.vscode-yaml
+code --install-extension samuelcolvin.jinjahtml
+code --install-extension stevemcgrath.twilight-operator
+
+# Stop Caffeinating
+kill ${CAFFEINE_PID}
+</code></pre>
+
+<p>My zshrc file would at its simplest look like this:</p>
+
+<pre><code class="language-bash"># environment variables
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export DEFAULT_USER=&quot;steve&quot;
+
+# python Shims
+eval &quot;$(pyenv init -)&quot;
+eval &quot;$(pyenv virtualenv-init -)&quot;
+
+# Setup the iTerm2 shell integration
+if [ -f &quot;${HOME}/.iterm2_shell_integration.zsh&quot; ];then
+    source &quot;${HOME}/.iterm2_shell_integration.zsh&quot;
+fi
+
+# travis support
+[ -f ~/.travis/travis.sh ] &amp;&amp; source ~/.travis/travis.sh
+
+# Setup the ZSH Shell
+source /usr/local/share/antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme eendroroy/nothing
+antigen apply
+
+# some simple helper functions
+regex() { perl -ne &quot;/$1/ &amp;&amp; print \&quot;\$1\n\&quot;&quot; }
+it2prof() { echo -e &quot;\033]50;SetProfile=$1\a&quot; }
+iterm2_print_user_vars() {
+    iterm2_set_user_var pyenv $(pyenv version-name)
+    iterm2_set_user_var pythonVersion $(python --version 2&gt;&amp;1 | cut -d &quot; &quot; -f 2)
+}
+alias docker-mac-stop=&quot;test -z \&quot;$(docker ps -q 2&gt;/dev/null)\&quot; &amp;&amp; osascript -e 'quit app \&quot;Docker\&quot;'&quot;
+alias docker-mac-start=&quot;open --background -a Docker&quot;
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://stevemcgrath.io/post/2020-06-10-pytenable-v2-underway/">pyTenable version 2 under development</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://stevemcgrath.io/js/ui.js"></script>
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79231696-1', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+</body>
+</html>
+
